@@ -4177,6 +4177,557 @@ CMD ["npm", "start"]`,
       },
     ],
   },
+  sql: {
+    slug: "sql",
+    title: "SQL",
+    icon: "🗄️",
+    description: "Structured Query Language - Өгөгдлийн сан удирдах хэл",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `SQL (Structured Query Language) нь реляцийн өгөгдлийн сантай (relational database) ажиллах стандарт хэл юм. SQL нь 1970-аад онд IBM-ээс гарсан бөгөөд одоо дэлхийн хамгийн түгээмэл өгөгдлийн сан удирдах хэл болоод байна.
+
+SQL-ийн хэрэглээ:
+- Өгөгдөл унших, бичих, шинэчлэх, устгах (CRUD)
+- Хүснэгт үүсгэх, засварлах
+- Өгөгдөл шүүх, эрэмбэлэх
+- Хүснэгтүүдийг нэгтгэх (JOIN)
+- Өгөгдөл дүгнэх, тооцоолох
+- Өгөгдлийн сан удирдах
+
+SQL ашигладаг өгөгдлийн сан:
+- MySQL
+- PostgreSQL
+- SQL Server
+- SQLite
+- Oracle
+
+SQL нь бүх backend хөгжүүлэлтэд зайлшгүй шаардлагатай ур чадвар юм.`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**SQL суралцах шалтгаанууд:**
+
+• Бүх backend хөгжүүлэлтэд хэрэгтэй - Өгөгдөл хадгалах, унших
+• Стандарт хэл - Бүх relational database-д ажилладаг
+• Өндөр эрэлт - Backend developer-үүд SQL мэдэх ёстой
+• Data analysis - Өгөгдөл шинжилгээ хийх
+• Database administration - Өгөгдлийн сан удирдах
+• Job opportunities - Data analyst, backend developer
+• Хялбар сурахад - Ойлгомжтой синтакс
+• Олон салбарт хэрэглэгдэнэ - Банк, эрүүл мэнд, худалдаа`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**CRUD Operations:**
+- CREATE: Өгөгдөл нэмэх (INSERT)
+- READ: Өгөгдөл унших (SELECT)
+- UPDATE: Өгөгдөл шинэчлэх (UPDATE)
+- DELETE: Өгөгдөл устгах (DELETE)
+
+**Database Objects:**
+- Table: Хүснэгт
+- Column: Багана
+- Row: Мөр
+- Primary Key: Үндсэн түлхүүр
+- Foreign Key: Гадаад түлхүүр
+
+**SQL Commands:**
+- SELECT: Өгөгдөл сонгох
+- FROM: Хүснэгт заах
+- WHERE: Нөхцөл заах
+- JOIN: Хүснэгт нэгтгэх
+- GROUP BY: Бүлэглэх
+- ORDER BY: Эрэмбэлэх
+- HAVING: Бүлгийн нөхцөл
+
+**Data Types:**
+- INT, VARCHAR, TEXT, DATE, DATETIME, BOOLEAN
+
+**Constraints:**
+- NOT NULL: Хоосон байхгүй
+- UNIQUE: Давтагдахгүй
+- PRIMARY KEY: Үндсэн түлхүүр
+- FOREIGN KEY: Гадаад түлхүүр`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `-- Хүснэгт үүсгэх
+CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    age INT,
+    email VARCHAR(100) UNIQUE,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Өгөгдөл нэмэх (INSERT)
+INSERT INTO students (name, age, email)
+VALUES 
+    ('Болд', 17, 'bold@example.com'),
+    ('Дорж', 16, 'dorj@example.com'),
+    ('Сүх', 18, 'sukh@example.com');
+
+-- Өгөгдөл унших (SELECT)
+-- Бүх өгөгдөл
+SELECT * FROM students;
+
+-- Тодорхой багана
+SELECT name, age FROM students;
+
+-- Нөхцөлтэй (WHERE)
+SELECT * FROM students WHERE age > 16;
+SELECT * FROM students WHERE name LIKE 'Б%';
+
+-- Эрэмбэлэх (ORDER BY)
+SELECT * FROM students ORDER BY age DESC;
+SELECT * FROM students ORDER BY name ASC;
+
+-- Тооцоолол
+SELECT COUNT(*) FROM students;
+SELECT AVG(age) FROM students;
+SELECT MAX(age), MIN(age) FROM students;
+
+-- Бүлэглэх (GROUP BY)
+SELECT age, COUNT(*) as count 
+FROM students 
+GROUP BY age;
+
+-- Хүснэгт нэгтгэх (JOIN)
+-- INNER JOIN
+SELECT s.name, c.course_name
+FROM students s
+INNER JOIN courses c ON s.id = c.student_id;
+
+-- LEFT JOIN
+SELECT s.name, c.course_name
+FROM students s
+LEFT JOIN courses c ON s.id = c.student_id;
+
+-- Өгөгдөл шинэчлэх (UPDATE)
+UPDATE students 
+SET age = 18 
+WHERE name = 'Болд';
+
+-- Өгөгдөл устгах (DELETE)
+DELETE FROM students WHERE id = 1;
+
+-- Хүснэгт засварлах (ALTER)
+ALTER TABLE students ADD COLUMN phone VARCHAR(20);
+ALTER TABLE students MODIFY COLUMN age INT NOT NULL;
+
+-- Хүснэгт устгах (DROP)
+DROP TABLE students;
+
+-- Subquery
+SELECT * FROM students 
+WHERE age > (SELECT AVG(age) FROM students);
+
+-- Index үүсгэх (хурдан хайлт)
+CREATE INDEX idx_email ON students(email);`,
+      language: "sql",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "Хүснэгт үүсгэх (CREATE TABLE)",
+          "Өгөгдөл нэмэх, унших (INSERT, SELECT)",
+          "WHERE clause ашиглан шүүх",
+          "ORDER BY ашиглан эрэмбэлэх",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "JOIN ашиглан хүснэгт нэгтгэх",
+          "GROUP BY, HAVING ашиглах",
+          "Aggregate functions (COUNT, SUM, AVG)",
+          "Subquery ашиглах",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "Complex queries үүсгэх",
+          "Stored procedures үүсгэх",
+          "Triggers үүсгэх",
+          "Database optimization (indexes, normalization)",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "SQL гэж юу вэ?",
+        options: [
+          "Simple Query Language",
+          "Structured Query Language - өгөгдлийн сан удирдах хэл",
+          "Standard Query Language",
+          "System Query Language",
+        ],
+        correctAnswer: 1,
+        explanation: "SQL (Structured Query Language) нь реляцийн өгөгдлийн сантай ажиллах стандарт хэл юм.",
+      },
+      {
+        question: "CRUD гэж юу вэ?",
+        options: [
+          "Create, Read, Update, Delete - өгөгдөлтэй ажиллах үндсэн үйлдлүүд",
+          "Code, Run, Update, Delete",
+          "Create, Remove, Update, Delete",
+          "Copy, Read, Update, Delete",
+        ],
+        correctAnswer: 0,
+        explanation: "CRUD нь Create (INSERT), Read (SELECT), Update (UPDATE), Delete (DELETE) гэсэн өгөгдөлтэй ажиллах үндсэн үйлдлүүд юм.",
+      },
+      {
+        question: "JOIN гэж юу вэ?",
+        options: [
+          "Хүснэгт нэмэх",
+          "Хүснэгтүүдийг нэгтгэх, холбох",
+          "Хүснэгт устгах",
+          "Хүснэгт засварлах",
+        ],
+        correctAnswer: 1,
+        explanation: "JOIN нь хоёр буюу түүнээс дээш хүснэгтийг нэгтгэж, холбох SQL командууд юм.",
+      },
+      {
+        question: "PRIMARY KEY гэж юу вэ?",
+        options: [
+          "Хүснэгтийн нэр",
+          "Мөрийг өвөрмөц таних түлхүүр",
+          "Баганы нэр",
+          "Өгөгдлийн төрөл",
+        ],
+        correctAnswer: 1,
+        explanation: "PRIMARY KEY нь хүснэгтийн мөр бүрийг өвөрмөц таних түлхүүр бөгөөд NULL байж болохгүй.",
+      },
+      {
+        question: "GROUP BY-ийн зорилго юу вэ?",
+        options: [
+          "Өгөгдөл эрэмбэлэх",
+          "Өгөгдөл бүлэглэх, дүгнэх",
+          "Өгөгдөл шүүх",
+          "Өгөгдөл нэмэх",
+        ],
+        correctAnswer: 1,
+        explanation: "GROUP BY нь ижил утгатай мөрүүдийг бүлэглэж, aggregate functions (COUNT, SUM, AVG) ашиглах боломжийг олгодог.",
+      },
+    ],
+  },
+  mongodb: {
+    slug: "mongodb",
+    title: "MongoDB (NoSQL)",
+    icon: "🍃",
+    description: "NoSQL документ-суурилсан өгөгдлийн сан",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `MongoDB нь NoSQL документ-суурилсан өгөгдлийн сан юм. MongoDB нь 2009 онд гарсан бөгөөд одоо хамгийн алдартай NoSQL database болоод байна. MongoDB нь JSON-тэй төстэй BSON формат ашиглан өгөгдөл хадгалдаг.
+
+MongoDB-ийн онцлог:
+- Document-based: Хүснэгт биш, документ хэлбэрээр
+- Schema-less: Бүтэц тодорхойлох шаардлагагүй
+- Flexible: Өгөгдлийн бүтэц хялбар өөрчлөгддөг
+- Scalable: Хэмжээтэй өсөхөд тохиромжтой
+- Fast: Хурдан унших, бичих
+
+MongoDB-ийн хэрэглээ:
+- Real-time applications
+- Content management systems
+- Mobile applications
+- Big data
+- IoT applications
+
+MongoDB нь Node.js, Python, Java зэрэг олон хэлтэй ажилладаг.`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**MongoDB суралцах шалтгаанууд:**
+
+• NoSQL стандарт - Хамгийн алдартай NoSQL database
+• Flexible schema - Өгөгдлийн бүтэц хялбар өөрчлөгддөг
+• JSON-like format - JavaScript-тэй сайн ажилладаг
+• Scalable - Хэмжээтэй өсөхөд тохиромжтой
+• Fast - Хурдан унших, бичих
+• Node.js-тэй сайн ажилладаг - MERN stack
+• Real-time applications - Chat, gaming
+• Олон компани ашигладаг - eBay, Adobe, Forbes`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**MongoDB Structure:**
+- Database: Өгөгдлийн сан
+- Collection: Хүснэгттэй төстэй (document-уудын цуглуулга)
+- Document: Мөртэй төстэй (BSON формат)
+- Field: Баганатай төстэй
+
+**CRUD Operations:**
+- Create: insertOne(), insertMany()
+- Read: find(), findOne()
+- Update: updateOne(), updateMany()
+- Delete: deleteOne(), deleteMany()
+
+**Query Operators:**
+- $eq: Тэнцүү
+- $gt, $lt: Их, бага
+- $in: Массив доторх
+- $and, $or: Логик оператор
+- $regex: Текст хайлт
+
+**Aggregation:**
+- $match: Шүүх
+- $group: Бүлэглэх
+- $sort: Эрэмбэлэх
+- $project: Багана сонгох
+
+**Indexes:**
+- Хурдан хайлт хийх
+- createIndex()
+
+**Relationships:**
+- Embedded documents
+- References`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `// MongoDB with Node.js (Mongoose)
+
+// 1. Connection
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/amjilt-school');
+
+// 2. Schema үүсгэх
+const studentSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  age: { type: Number, min: 0, max: 100 },
+  email: { type: String, unique: true },
+  subjects: [String],
+  createdAt: { type: Date, default: Date.now }
+});
+
+const Student = mongoose.model('Student', studentSchema);
+
+// 3. Create (Өгөгдөл нэмэх)
+// insertOne
+const student1 = new Student({
+  name: 'Болд',
+  age: 17,
+  email: 'bold@example.com',
+  subjects: ['Python', 'JavaScript']
+});
+await student1.save();
+
+// insertMany
+await Student.insertMany([
+  { name: 'Дорж', age: 16, email: 'dorj@example.com' },
+  { name: 'Сүх', age: 18, email: 'sukh@example.com' }
+]);
+
+// 4. Read (Өгөгдөл унших)
+// Бүх документ
+const allStudents = await Student.find();
+
+// Нэг документ
+const student = await Student.findOne({ name: 'Болд' });
+
+// Нөхцөлтэй
+const adults = await Student.find({ age: { $gte: 18 } });
+const pythonStudents = await Student.find({ subjects: 'Python' });
+
+// Эрэмбэлэх
+const sorted = await Student.find().sort({ age: -1 });
+
+// Тооцоолол
+const count = await Student.countDocuments();
+const avgAge = await Student.aggregate([
+  { $group: { _id: null, avgAge: { $avg: '$age' } } }
+]);
+
+// 5. Update (Өгөгдөл шинэчлэх)
+// updateOne
+await Student.updateOne(
+  { name: 'Болд' },
+  { $set: { age: 18 } }
+);
+
+// updateMany
+await Student.updateMany(
+  { age: { $lt: 18 } },
+  { $set: { status: 'minor' } }
+);
+
+// findByIdAndUpdate
+await Student.findByIdAndUpdate(
+  studentId,
+  { $push: { subjects: 'React' } },
+  { new: true }
+);
+
+// 6. Delete (Өгөгдөл устгах)
+// deleteOne
+await Student.deleteOne({ name: 'Болд' });
+
+// deleteMany
+await Student.deleteMany({ age: { $lt: 18 } });
+
+// findByIdAndDelete
+await Student.findByIdAndDelete(studentId);
+
+// 7. Query Operators
+// $gt, $lt, $gte, $lte
+const adults = await Student.find({ age: { $gte: 18 } });
+
+// $in
+const selected = await Student.find({ 
+  name: { $in: ['Болд', 'Дорж'] } 
+});
+
+// $and, $or
+const result = await Student.find({
+  $and: [
+    { age: { $gte: 16 } },
+    { age: { $lte: 18 } }
+  ]
+});
+
+// $regex (текст хайлт)
+const search = await Student.find({
+  name: { $regex: 'Бол', $options: 'i' }
+});
+
+// 8. Aggregation
+const result = await Student.aggregate([
+  { $match: { age: { $gte: 16 } } },
+  { $group: { 
+      _id: '$age', 
+      count: { $sum: 1 },
+      names: { $push: '$name' }
+    }
+  },
+  { $sort: { _id: 1 } }
+]);
+
+// 9. Index үүсгэх
+await Student.createIndex({ email: 1 });
+await Student.createIndex({ name: 1, age: -1 });
+
+// 10. Relationships
+// Embedded
+const courseSchema = new mongoose.Schema({
+  title: String,
+  students: [studentSchema] // Embedded
+});
+
+// Reference
+const courseSchema = new mongoose.Schema({
+  title: String,
+  students: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Student' }]
+});`,
+      language: "javascript",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "MongoDB connection хийх",
+          "Collection үүсгэх, документ нэмэх",
+          "find(), findOne() ашиглан унших",
+          "updateOne(), deleteOne() ашиглах",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "Query operators ($gt, $in, $regex) ашиглах",
+          "Aggregation pipeline хийх",
+          "Index үүсгэх",
+          "Relationships (embedded, references) хийх",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "Complex aggregation queries",
+          "Transaction ашиглах",
+          "MongoDB Atlas (cloud) ашиглах",
+          "Performance optimization",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "MongoDB гэж юу вэ?",
+        options: [
+          "SQL database",
+          "NoSQL документ-суурилсан өгөгдлийн сан",
+          "Programming language",
+          "Framework",
+        ],
+        correctAnswer: 1,
+        explanation: "MongoDB нь NoSQL документ-суурилсан өгөгдлийн сан бөгөөд JSON-тэй төстэй BSON формат ашигладаг.",
+      },
+      {
+        question: "MongoDB-д хүснэгттэй төстэй зүйл юу вэ?",
+        options: [
+          "Database",
+          "Collection",
+          "Document",
+          "Field",
+        ],
+        correctAnswer: 1,
+        explanation: "MongoDB-д Collection нь SQL-ийн хүснэгттэй төстэй. Collection нь document-уудын цуглуулга юм.",
+      },
+      {
+        question: "MongoDB-д документ нэмэхэд ямар функц хэрэглэдэг вэ?",
+        options: [
+          "insertOne(), insertMany()",
+          "addOne(), addMany()",
+          "createOne(), createMany()",
+          "saveOne(), saveMany()",
+        ],
+        correctAnswer: 0,
+        explanation: "MongoDB-д документ нэмэхэд insertOne() (нэг документ) эсвэл insertMany() (олон документ) хэрэглэдэг.",
+      },
+      {
+        question: "MongoDB-ийн давуу тал юу вэ?",
+        options: [
+          "Хурдан ажиллах",
+          "Flexible schema, JSON-like format, scalable",
+          "Бага санах ой",
+          "Хялбар код",
+        ],
+        correctAnswer: 1,
+        explanation: "MongoDB-ийн давуу тал нь flexible schema (бүтэц хялбар өөрчлөгддөг), JSON-like format, scalable (хэмжээтэй өсөхөд тохиромжтой) юм.",
+      },
+      {
+        question: "MongoDB aggregation pipeline-ийн зорилго юу вэ?",
+        options: [
+          "Өгөгдөл нэмэх",
+          "Өгөгдөл боловсруулах, дүгнэх, шинжилгээ хийх",
+          "Өгөгдөл устгах",
+          "Өгөгдөл засварлах",
+        ],
+        correctAnswer: 1,
+        explanation: "MongoDB aggregation pipeline нь өгөгдөл боловсруулах, дүгнэх, шинжилгээ хийхэд ашиглагдана. $match, $group, $sort зэрэг stage-ууд агуулна.",
+      },
+    ],
+  },
 }
 
 // Export subjectsData for use in other pages (like test page)

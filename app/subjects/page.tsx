@@ -128,6 +128,20 @@ const subjects = [
     icon: "🏗️",
     category: "Архитектур",
   },
+  {
+    slug: "sql",
+    title: "SQL",
+    description: "Structured Query Language - Өгөгдлийн сан удирдах",
+    icon: "🗄️",
+    category: "Өгөгдлийн сан",
+  },
+  {
+    slug: "mongodb",
+    title: "MongoDB",
+    description: "NoSQL документ-суурилсан өгөгдлийн сан",
+    icon: "🍃",
+    category: "Өгөгдлийн сан",
+  },
 ]
 
 function SubjectsContent() {

@@ -71,6 +71,13 @@ const sidebarSections: SidebarSection[] = [
     ],
   },
   {
+    title: "Өгөгдлийн сан",
+    items: [
+      { title: "SQL", href: "/subjects/sql" },
+      { title: "MongoDB", href: "/subjects/mongodb" },
+    ],
+  },
+  {
     title: "Хувилбар Удирдлага",
     items: [{ title: "GitHub", href: "/subjects/github" }],
   },
