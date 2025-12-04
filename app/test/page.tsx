@@ -142,7 +142,8 @@ export default function TestPage() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-1">
-        <div className="container py-8 md:py-12 max-w-4xl">
+        <div className="w-full px-4 md:px-8 py-8 md:py-12">
+          <div className="mx-auto max-w-4xl">
           {/* Header */}
           <div className="mb-8 space-y-4">
             <div className="flex items-center gap-4">
@@ -181,6 +182,7 @@ export default function TestPage() {
             <Button asChild variant="outline">
               <Link href="/subjects">Хичээлүүд рүү буцах</Link>
             </Button>
+          </div>
           </div>
         </div>
       </main>
