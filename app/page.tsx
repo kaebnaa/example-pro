@@ -59,7 +59,7 @@ export default function HomePage() {
               </h1>
               <p className="mx-auto max-w-[700px] text-lg text-muted-foreground md:text-xl text-balance">
                 Ахлах сургуулийн сурагчдад зориулсан програмчлалын цогц баримтжуулалт. Орчин үеийн технологиудыг судлан,
-                бодит төслүүд дээр практик ажиллаарай.
+                бодит төслүүд дээр ажиллаарай.
               </p>
             </div>
             <div className="flex gap-4 flex-wrap justify-center">
