@@ -32,6 +32,8 @@ const sidebarSections: SidebarSection[] = [
       { title: "HTML", href: "/subjects/html" },
       { title: "CSS", href: "/subjects/css" },
       { title: "JavaScript", href: "/subjects/javascript" },
+      { title: "ReactJS", href: "/subjects/reactjs" },
+      { title: "NextJS", href: "/subjects/nextjs" },
     ],
   },
   {
@@ -47,6 +49,25 @@ const sidebarSections: SidebarSection[] = [
       { title: "Python", href: "/subjects/python" },
       { title: "Python with AI", href: "/subjects/python-ai" },
       { title: "C++", href: "/subjects/cpp" },
+    ],
+  },
+  {
+    title: "Аюулгүй байдал",
+    items: [{ title: "Cybersecurity", href: "/subjects/cybersecurity" }],
+  },
+  {
+    title: "Хиймэл оюун ухаан",
+    items: [
+      { title: "Machine Learning", href: "/subjects/machine-learning" },
+      { title: "Computer Vision", href: "/subjects/computer-vision" },
+      { title: "NLP", href: "/subjects/nlp" },
+      { title: "Prompt Engineering", href: "/subjects/prompt-engineering" },
+    ],
+  },
+  {
+    title: "Архитектур",
+    items: [
+      { title: "Web/App Structure", href: "/subjects/web-app-structure" },
     ],
   },
   {

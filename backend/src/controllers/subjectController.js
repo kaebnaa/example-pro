@@ -1,4 +1,5 @@
 import Subject from "../models/Subject.js"
+import { getRandomQuiz } from "../utils/quizUtils.js"
 
 // GET /api/subjects
 export async function getSubjects(req, res, next) {
@@ -14,10 +15,27 @@ export async function getSubjects(req, res, next) {
 export async function getSubjectBySlug(req, res, next) {
   try {
     const { slug } = req.params
+    const { randomize, count } = req.query // ?randomize=true&count=20
+
     const subject = await Subject.findOne({ slug })
     if (!subject) {
       return res.status(404).json({ success: false, message: "Subject not found" })
     }
+
+    // If randomize is requested, return randomized quiz
+    if (randomize === "true") {
+      const quizCount = count ? parseInt(count, 10) : 20
+      const randomQuiz = getRandomQuiz(subject, quizCount)
+      
+      return res.json({
+        success: true,
+        data: {
+          ...subject.toObject(),
+          quiz: randomQuiz,
+        },
+      })
+    }
+
     res.json({ success: true, data: subject })
   } catch (err) {
     next(err)

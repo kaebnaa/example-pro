@@ -2109,7 +2109,2078 @@ my_car.brake()`,
       },
     ],
   },
+  reactjs: {
+    slug: "reactjs",
+    title: "ReactJS",
+    icon: "⚛️",
+    description: "Frontend хөгжүүлэлтийн хүчирхэг framework",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `React нь Facebook (одоо Meta) компаниас 2013 онд гаргасан JavaScript library юм. React нь user interface (UI) үүсгэхэд зориулагдсан бөгөөд одоо дэлхийн хамгийн алдартай frontend framework болоод байна.
+
+React-ийн гол онцлог нь component-based архитектур бөгөөд дахин ашиглах боломжтой UI хэсгүүд үүсгэх боломжийг олгодог. React нь virtual DOM ашигладаг учраас хурдан, хэмжээтэй апликейшн үүсгэхэд тохиромжтой.
+
+Netflix, Facebook, Instagram, Airbnb, Uber зэрэг томоохон компаниуд React ашигладаг. React нь одоогийн вэб хөгжүүлэлтийн стандарт болоод байна.`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**React суралцах шалтгаанууд:**
+
+• Хамгийн алдартай frontend framework - Олон компани React хөгжүүлэгч хайдаг
+• Component-based - Код дахин ашиглах, засвар үйлчилгээ хялбар
+• Virtual DOM - Хурдан, хэмжээтэй апликейшн
+• Том ecosystem - Олон library, tool байдаг
+• Job opportunities - Өндөр цалинтай мэргэжил
+• React Native - Mobile app хөгжүүлэх боломж
+• Community support - Асуудалд хариулт хурдан олдоно
+• Modern development - Hooks, Context API зэрэг орчин үеийн функцууд`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**Components:**
+React дээр UI-ийг component-уудаар бүтээдэг. Component нь дахин ашиглагдах UI хэсэг.
+
+**JSX:**
+JavaScript-д HTML-тэй төстэй синтакс. JSX нь React элементүүд үүсгэхэд ашиглагдана.
+
+**Props:**
+Component-уудын хооронд өгөгдөл дамжуулах арга. Parent component-аас child component руу.
+
+**State:**
+Component-ийн өөрчлөгдөж болох өгөгдөл. useState hook ашиглан удирдана.
+
+**Hooks:**
+useState, useEffect, useContext зэрэг функцууд. Class component-ийн оронд функц component ашиглах.
+
+**Virtual DOM:**
+React-ийн хурдан ажиллагааны нууц. DOM-ийн виртуал хувилбар үүсгэж, зөвхөн өөрчлөлт хийсэн хэсгийг шинэчилнэ.
+
+**Event Handling:**
+onClick, onChange зэрэг event-уудтай ажиллах.
+
+**Conditional Rendering:**
+if/else, ternary operator ашиглан нөхцөлт UI харуулах.`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `// Functional Component with Hooks
+import { useState, useEffect } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = \`Count: \${count}\`;
+  }, [count]);
+
+  return (
+    <div>
+      <h1>Counter: {count}</h1>
+      <button onClick={() => setCount(count + 1)}>
+        Нэмэх
+      </button>
+      <button onClick={() => setCount(count - 1)}>
+        Хасах
+      </button>
+    </div>
+  );
 }
+
+// Component with Props
+function Greeting({ name, age }) {
+  return (
+    <div>
+      <h2>Сайн уу, {name}!</h2>
+      <p>Та {age} настай байна.</p>
+    </div>
+  );
+}
+
+// List Component
+function TodoList() {
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState('');
+
+  const addTodo = () => {
+    if (input.trim()) {
+      setTodos([...todos, input]);
+      setInput('');
+    }
+  };
+
+  return (
+    <div>
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Хийх зүйлээ оруулна уу"
+      />
+      <button onClick={addTodo}>Нэмэх</button>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>{todo}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// Conditional Rendering
+function UserProfile({ user }) {
+  if (!user) {
+    return <div>Хэрэглэгч олдсонгүй</div>;
+  }
+
+  return (
+    <div>
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+      {user.isAdmin && <p>Админ эрхтэй</p>}
+    </div>
+  );
+}
+
+// Event Handling
+function Button() {
+  const handleClick = () => {
+    alert('Товч дарагдлаа!');
+  };
+
+  return (
+    <button onClick={handleClick}>
+      Дарах
+    </button>
+  );
+}
+
+export default Counter;`,
+      language: "javascript",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "Hello World component үүсгэх",
+          "useState ашиглан counter component хийх",
+          "Props ашиглан Card component үүсгэх",
+          "List component үүсгэх (массив харуулах)",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "Todo list app үүсгэх (нэмэх, устгах)",
+          "Form component үүсгэх (input, validation)",
+          "useEffect ашиглан API-аас өгөгдөл татах",
+          "Conditional rendering ашиглах",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "Context API ашиглан state management",
+          "Custom hooks үүсгэх",
+          "React Router ашиглан multi-page app",
+          "Performance optimization (useMemo, useCallback)",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "React нь юу вэ?",
+        options: ["Programming language", "JavaScript library", "Database", "Server"],
+        correctAnswer: 1,
+        explanation: "React нь JavaScript library бөгөөд user interface үүсгэхэд ашиглагдана.",
+      },
+      {
+        question: "React дээр state удирдахад ямар hook хэрэглэдэг вэ?",
+        options: ["useEffect", "useState", "useContext", "useReducer"],
+        correctAnswer: 1,
+        explanation: "useState hook нь React дээр state удирдахад хэрэглэгддэг.",
+      },
+      {
+        question: "JSX гэж юу вэ?",
+        options: [
+          "JavaScript extension",
+          "JavaScript XML - HTML-тэй төстэй синтакс",
+          "JSON extension",
+          "Java syntax",
+        ],
+        correctAnswer: 1,
+        explanation: "JSX нь JavaScript XML бөгөөд React дээр HTML-тэй төстэй синтакс ашиглан элементүүд үүсгэдэг.",
+      },
+      {
+        question: "Props гэж юу вэ?",
+        options: [
+          "Component-ийн state",
+          "Parent-аас child руу өгөгдөл дамжуулах",
+          "Event handler",
+          "CSS class",
+        ],
+        correctAnswer: 1,
+        explanation: "Props нь parent component-аас child component руу өгөгдөл дамжуулах арга юм.",
+      },
+      {
+        question: "Virtual DOM-ийн давуу тал юу вэ?",
+        options: [
+          "Хурдан ажиллагаа",
+          "Бага санах ой ашиглах",
+          "Хурдан render хийх, зөвхөн өөрчлөлт хийсэн хэсгийг шинэчлэх",
+          "Илүү хялбар код",
+        ],
+        correctAnswer: 2,
+        explanation: "Virtual DOM нь зөвхөн өөрчлөлт хийсэн хэсгийг шинэчилдэг учраас хурдан ажилладаг.",
+      },
+    ],
+  },
+  nextjs: {
+    slug: "nextjs",
+    title: "NextJS",
+    icon: "▲",
+    description: "React production framework - Server-side rendering болон static site generation",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `Next.js нь Vercel компаниас 2016 онд гаргасан React-д суурилсан production-ready framework юм. Next.js нь React-ийн бүх давуу талуудыг ашиглахын зэрэгцээ server-side rendering (SSR), static site generation (SSG), API routes зэрэг production-д шаардлагатай функцуудыг өгдөг.
+
+Next.js нь SEO-friendly, хурдан, хэмжээтэй вэб апликейшн үүсгэхэд тохиромжтой. Netflix, TikTok, Hulu, Twitch зэрэг томоохон компаниуд Next.js ашигладаг.
+
+Next.js-ийн гол онцлогууд:
+- Server-side rendering (SSR)
+- Static site generation (SSG)
+- API routes (backend функц)
+- Automatic code splitting
+- Image optimization
+- Built-in CSS support
+- TypeScript support`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**Next.js суралцах шалтгаанууд:**
+
+• Production-ready - Бүх шаардлагатай функц бэлэн
+• SEO-friendly - Server-side rendering SEO-д сайн
+• Хурдан - Automatic optimization, code splitting
+• Full-stack - API routes ашиглан backend хийх боломж
+• Vercel deployment - Хялбар deploy (Vercel компаниас)
+• Image optimization - Автоматаар зураг optimize хийх
+• TypeScript support - Type safety
+• File-based routing - Folder structure = routes
+• Hot reload - Development хурдан
+• Олон компани ашигладаг - Job opportunities`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**File-based Routing:**
+pages/ эсвэл app/ folder доторх файлууд автоматаар route болдог.
+
+**Server-side Rendering (SSR):**
+getServerSideProps ашиглан сервер дээр render хийх.
+
+**Static Site Generation (SSG):**
+getStaticProps ашиглан build хийх үед static HTML үүсгэх.
+
+**API Routes:**
+pages/api/ эсвэл app/api/ доторх файлууд API endpoint болдог.
+
+**Image Optimization:**
+next/image component ашиглан зураг автоматаар optimize хийх.
+
+**Link Component:**
+next/link ашиглан client-side navigation хийх.
+
+**Metadata:**
+SEO-д зориулсан metadata тохируулах.
+
+**Middleware:**
+Request-ийг боловсруулах middleware.
+
+**Dynamic Routes:**
+[slug], [id] зэрэг dynamic route параметр.
+
+**Layouts:**
+_app.js эсвэл layout.tsx ашиглан global layout үүсгэх.`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `// pages/index.js (App Router: app/page.tsx)
+import Link from 'next/link';
+import Image from 'next/image';
+
+export default function HomePage() {
+  return (
+    <div>
+      <h1>Next.js Апп</h1>
+      <Link href="/about">Бидний тухай</Link>
+      <Image
+        src="/logo.png"
+        alt="Лого"
+        width={200}
+        height={200}
+      />
+    </div>
+  );
+}
+
+// pages/about.js
+export default function AboutPage() {
+  return (
+    <div>
+      <h1>Бидний тухай</h1>
+      <p>Энэ бол Next.js хуудас</p>
+    </div>
+  );
+}
+
+// Dynamic Route: pages/posts/[id].js
+export default function PostPage({ post }) {
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <p>{post.content}</p>
+    </div>
+  );
+}
+
+export async function getServerSideProps({ params }) {
+  const post = await fetchPost(params.id);
+  return {
+    props: { post },
+  };
+}
+
+// Static Generation: pages/posts/[id].js
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+  const paths = posts.map((post) => ({
+    params: { id: post.id.toString() },
+  }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const post = await getPost(params.id);
+  return {
+    props: { post },
+  };
+}
+
+// API Route: pages/api/users.js
+export default function handler(req, res) {
+  if (req.method === 'GET') {
+    res.status(200).json({ users: ['Болд', 'Дорж'] });
+  } else if (req.method === 'POST') {
+    const { name } = req.body;
+    res.status(201).json({ message: 'Хэрэглэгч үүслээ', name });
+  }
+}
+
+// App Router: app/api/users/route.js
+export async function GET() {
+  return Response.json({ users: ['Болд', 'Дорж'] });
+}
+
+export async function POST(request) {
+  const { name } = await request.json();
+  return Response.json({ message: 'Хэрэглэгч үүслээ', name });
+}
+
+// Metadata: app/layout.js
+export const metadata = {
+  title: 'Amjilt Cyber School',
+  description: 'Програмчлалын сургалт',
+};
+
+// Middleware: middleware.js
+import { NextResponse } from 'next/server';
+
+export function middleware(request) {
+  // Authentication check
+  return NextResponse.next();
+}`,
+      language: "javascript",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "Next.js project үүсгэх (create-next-app)",
+          "File-based routing ашиглан хуудас үүсгэх",
+          "Link component ашиглан navigation хийх",
+          "Image component ашиглан зураг харуулах",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "Dynamic routes үүсгэх ([slug])",
+          "API route үүсгэх (GET, POST)",
+          "getServerSideProps ашиглан SSR хийх",
+          "getStaticProps ашиглан SSG хийх",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "App Router ашиглах (Next.js 13+)",
+          "Server Components болон Client Components",
+          "Middleware ашиглан authentication",
+          "Vercel дээр deploy хийх",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "Next.js нь юу дээр суурилдаг вэ?",
+        options: ["Vue", "React", "Angular", "Svelte"],
+        correctAnswer: 1,
+        explanation: "Next.js нь React-д суурилсан framework юм.",
+      },
+      {
+        question: "Next.js дээр route үүсгэхэд юу ашигладаг вэ?",
+        options: [
+          "Router configuration",
+          "File-based routing (folder structure)",
+          "Route.js файл",
+          "Config file",
+        ],
+        correctAnswer: 1,
+        explanation: "Next.js нь file-based routing ашигладаг. pages/ эсвэл app/ folder доторх файлууд автоматаар route болдог.",
+      },
+      {
+        question: "SSR гэж юу вэ?",
+        options: [
+          "Static Site Rendering",
+          "Server-Side Rendering",
+          "Single Page Rendering",
+          "Server State Rendering",
+        ],
+        correctAnswer: 1,
+        explanation: "SSR нь Server-Side Rendering бөгөөд сервер дээр HTML үүсгэж илгээдэг.",
+      },
+      {
+        question: "Next.js дээр API route хаана байрладаг вэ?",
+        options: [
+          "pages/api/ эсвэл app/api/",
+          "api/",
+          "routes/",
+          "server/",
+        ],
+        correctAnswer: 0,
+        explanation: "Next.js дээр API route нь pages/api/ (Pages Router) эсвэл app/api/ (App Router) folder дотор байрладаг.",
+      },
+      {
+        question: "next/image component-ийн давуу тал юу вэ?",
+        options: [
+          "Зураг автоматаар optimize хийх",
+          "Зураг томруулах",
+          "Зураг шүүх",
+          "Зураг хадгалах",
+        ],
+        correctAnswer: 0,
+        explanation: "next/image component нь зураг автоматаар optimize хийж, хурдан ачааллахад тусалдаг.",
+      },
+    ],
+  },
+  cybersecurity: {
+    slug: "cybersecurity",
+    title: "Cybersecurity",
+    icon: "🔒",
+    description: "Кибер аюулгүй байдал ба хамгаалалт",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `Cybersecurity (Кибер аюулгүй байдал) нь компьютер систем, сүлжээ, программуудыг хакер, вирус, мэдээллийн алдагдлаас хамгаалах практик юм. Орчин үед бүх зүйл интернеттэй холбогдож байгаа тул cybersecurity маш чухал болоод байна.
+
+Cybersecurity нь:
+- Хувийн мэдээллийг хамгаалах
+- Бизнесийн өгөгдлийг хамгаалах
+- Үндэсний аюулгүй байдлыг хамгаалах
+- Сүлжээний халдлагаас сэргийлэх
+
+Хакер, malware, phishing, ransomware зэрэг аюул заналхийлэл өдөр бүр нэмэгдэж байна. Тиймээс cybersecurity мэргэжилтэнүүдийн эрэлт маш өндөр байна.`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**Cybersecurity суралцах шалтгаанууд:**
+
+• Өндөр эрэлт - Олон компани cybersecurity мэргэжилтэн хайж байдаг
+• Өндөр цалин - Хамгийн өндөр цалинтай мэргэжилтнүүдийн нэг
+• Аюул заналхийлэл нэмэгдэж байна - Хакер, вирус өдөр бүр шинэчлэгдэж байна
+• Бүх салбарт хэрэгтэй - Банк, эрүүл мэнд, засгийн газар, компани
+• Карьерын боломж - Security analyst, penetration tester, security engineer
+• Хувийн мэдээлэл хамгаалах - Өөрийн мэдээллийг хамгаалах чадвар
+• Үндэсний аюулгүй байдал - Улс орны мэдээллийг хамгаалах`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**Аюул заналхийлэл (Threats):**
+- Malware: Вирус, trojan, ransomware
+- Phishing: Хуурамч email, website
+- DDoS: Distributed Denial of Service attack
+- SQL Injection: Database халдлага
+- XSS: Cross-Site Scripting
+
+**Хамгаалалт (Protection):**
+- Firewall: Сүлжээний хамгаалалт
+- Antivirus: Вирус сэргийлэх
+- Encryption: Өгөгдөл шифрлэх
+- Authentication: Хэрэглэгч баталгаажуулах
+- Authorization: Эрх удирдах
+
+**Хамгаалалтын арга:**
+- Password security: Хүчирхэг нууц үг
+- Two-factor authentication (2FA)
+- Regular updates: Систем шинэчлэх
+- Backup: Өгөгдөл нөөцлөх
+- Security awareness: Мэдлэг тараах
+
+**Ethical Hacking:**
+- Penetration testing: Системийн сул талыг олох
+- Vulnerability assessment: Аюул заналхийлэл үнэлэх`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `// Password validation
+function validatePassword(password) {
+  // Хамгийн багадаа 8 тэмдэгт
+  if (password.length < 8) {
+    return false;
+  }
+  
+  // Том үсэг агуулах
+  if (!/[A-Z]/.test(password)) {
+    return false;
+  }
+  
+  // Жижиг үсэг агуулах
+  if (!/[a-z]/.test(password)) {
+    return false;
+  }
+  
+  // Тоо агуулах
+  if (!/[0-9]/.test(password)) {
+    return false;
+  }
+  
+  // Тусгай тэмдэгт агуулах
+  if (!/[!@#$%^&*]/.test(password)) {
+    return false;
+  }
+  
+  return true;
+}
+
+// Password hashing (bcrypt)
+const bcrypt = require('bcrypt');
+
+async function hashPassword(password) {
+  const saltRounds = 10;
+  const hashedPassword = await bcrypt.hash(password, saltRounds);
+  return hashedPassword;
+}
+
+async function verifyPassword(password, hashedPassword) {
+  const isMatch = await bcrypt.compare(password, hashedPassword);
+  return isMatch;
+}
+
+// SQL Injection prevention
+// ❌ Буруу (vulnerable)
+const query = \`SELECT * FROM users WHERE username = '\${username}'\`;
+
+// ✅ Зөв (parameterized query)
+const query = 'SELECT * FROM users WHERE username = ?';
+db.query(query, [username]);
+
+// XSS prevention
+function sanitizeInput(input) {
+  return input
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
+// Encryption example (Node.js crypto)
+const crypto = require('crypto');
+
+function encrypt(text, key) {
+  const cipher = crypto.createCipher('aes-256-cbc', key);
+  let encrypted = cipher.update(text, 'utf8', 'hex');
+  encrypted += cipher.final('hex');
+  return encrypted;
+}
+
+function decrypt(encryptedText, key) {
+  const decipher = crypto.createDecipher('aes-256-cbc', key);
+  let decrypted = decipher.update(encryptedText, 'hex', 'utf8');
+  decrypted += decipher.final('utf8');
+  return decrypted;
+}
+
+// Rate limiting (DDoS prevention)
+const rateLimit = require('express-rate-limit');
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 минут
+  max: 100 // Хамгийн ихдээ 100 request
+});
+
+app.use('/api/', limiter);`,
+      language: "javascript",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "Хүчирхэг нууц үг үүсгэх функц бичих",
+          "Password validation хийх (том, жижиг үсэг, тоо, тусгай тэмдэгт)",
+          "Input sanitization хийх (XSS prevention)",
+          "Basic encryption/decryption функц бичих",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "SQL injection prevention (parameterized queries)",
+          "Rate limiting хэрэгжүүлэх",
+          "JWT token authentication систем",
+          "HTTPS connection тохируулах",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "Penetration testing tool үүсгэх",
+          "Vulnerability scanner хийх",
+          "Security audit хийх",
+          "Incident response plan бэлтгэх",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "Cybersecurity гэж юу вэ?",
+        options: [
+          "Компьютер засах",
+          "Кибер аюулгүй байдал - систем хамгаалах",
+          "Програм суулгах",
+          "Интернет ашиглах",
+        ],
+        correctAnswer: 1,
+        explanation: "Cybersecurity нь компьютер систем, сүлжээ, программуудыг хакер, вирус, мэдээллийн алдагдлаас хамгаалах практик юм.",
+      },
+      {
+        question: "Phishing гэж юу вэ?",
+        options: [
+          "Загас барих",
+          "Хуурамч email, website ашиглан мэдээлэл авах",
+          "Вирус устгах",
+          "Нууц үг солих",
+        ],
+        correctAnswer: 1,
+        explanation: "Phishing нь хакерууд хуурамч email эсвэл website ашиглан хэрэглэгчдийн мэдээлэл (нууц үг, банкны мэдээлэл) авах арга юм.",
+      },
+      {
+        question: "DDoS attack гэж юу вэ?",
+        options: [
+          "Database халдлага",
+          "Distributed Denial of Service - олон газраас хамтдаа request илгээж серверийг унтраах",
+          "Вирус тараах",
+          "Нууц үг таах",
+        ],
+        correctAnswer: 1,
+        explanation: "DDoS (Distributed Denial of Service) нь олон компьютерээс нэгэн зэрэг request илгээж серверийг унтраах халдлага юм.",
+      },
+      {
+        question: "SQL Injection-оос хамгаалах хамгийн сайн арга юу вэ?",
+        options: [
+          "Нууц үг хүчирхэг болгох",
+          "Parameterized queries ашиглах",
+          "Firewall ашиглах",
+          "Antivirus суулгах",
+        ],
+        correctAnswer: 1,
+        explanation: "SQL Injection-оос хамгаалах хамгийн сайн арга нь parameterized queries (prepared statements) ашиглах юм.",
+      },
+      {
+        question: "XSS (Cross-Site Scripting) гэж юу вэ?",
+        options: [
+          "CSS файл нэмэх",
+          "Хакер JavaScript код оруулж хэрэглэгчдийн мэдээлэл авах",
+          "Зураг нэмэх",
+          "Video татах",
+        ],
+        correctAnswer: 1,
+        explanation: "XSS нь хакерууд вэб хуудас руу JavaScript код оруулж, хэрэглэгчдийн cookie, session мэдээлэл авах халдлага юм.",
+      },
+    ],
+  },
+  "machine-learning": {
+    slug: "machine-learning",
+    title: "Machine Learning",
+    icon: "🤖",
+    description: "Машин сургалт ба хиймэл оюун ухаан",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `Machine Learning (Машин сургалт) нь компьютерт программчлалгүйгээр өгөгдлөөс суралцаж, таамаглал хийх боломж олгодог AI-ийн салбар юм. Machine Learning нь өгөгдлөөс pattern олж, ирээдүйн өгөгдөл дээр таамаглал хийх чадвартай.
+
+Machine Learning-ийн төрлүүд:
+- Supervised Learning: Label-тэй өгөгдлөөс суралцах
+- Unsupervised Learning: Label-гүй өгөгдлөөс pattern олох
+- Reinforcement Learning: Туршлагаас суралцах
+
+Machine Learning нь:
+- Зураг таних (Image recognition)
+- Дуу хоолой таних (Speech recognition)
+- Орчуулга (Translation)
+- Зөөлөн зөвлөх систем (Recommendation systems)
+- Автомашины удирдлага (Self-driving cars)
+- Эмнэлгийн оношлогоо (Medical diagnosis)
+
+Google, Facebook, Netflix, Amazon зэрэг компаниуд Machine Learning өргөнөөр ашигладаг.`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**Machine Learning суралцах шалтгаанууд:**
+
+• Ирээдүйн технологи - AI нь бүх салбарт хэрэглэгдэж байна
+• Өндөр цалин - ML engineer-үүд дэлхийн хамгийн өндөр цалинтай
+• Бодит асуудал шийдэх - Эмнэлгийн оношлогоо, хөдөлгөөнт тээвэр
+• Олон салбарт хэрэглэгдэнэ - Эрүүл мэнд, санхүү, худалдаа, боловсрол
+• Том компаниуд ашигладаг - Google, Facebook, Netflix
+• Automation - Давтагдах ажлыг автоматжуулах
+• Creativity - Зураг, хөгжим, текст үүсгэх
+• Эрэлт өндөр - ML мэргэжилтэн хайж байгаа компани олон`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**Supervised Learning:**
+Label-тэй өгөгдлөөс суралцах. Жишээ: Зургаас нохой, муур таних.
+
+**Unsupervised Learning:**
+Label-гүй өгөгдлөөс pattern олох. Жишээ: Хэрэглэгчдийг бүлэглэх.
+
+**Reinforcement Learning:**
+Туршлагаас суралцах. Жишээ: Шог, шатар тоглох AI.
+
+**Neural Networks:**
+Хүний тархины загварчилсан сүлжээ. Neurons (node) болон layer-ээс бүрдэнэ.
+
+**Deep Learning:**
+Олон layer-тэй neural network. Зураг, дуу хоолой таних.
+
+**Training vs Testing:**
+Training set: Model сургах өгөгдөл
+Testing set: Model шалгах өгөгдөл
+
+**Overfitting:**
+Model training өгөгдөлд хэт сайн, шинэ өгөгдөлд муу.
+
+**Popular Libraries:**
+- Scikit-learn: Machine learning
+- TensorFlow/Keras: Deep learning
+- PyTorch: Deep learning
+- Pandas: Өгөгдөл боловсруулах
+- NumPy: Математик тооцоолол`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `# Linear Regression (Scikit-learn)
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+import numpy as np
+
+# Өгөгдөл бэлтгэх
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([2, 4, 6, 8, 10])
+
+# Train/Test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Model сургах
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Таамаглал хийх
+predictions = model.predict(X_test)
+print("Таамаглал:", predictions)
+
+# Classification (Decision Tree)
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.datasets import load_iris
+
+# Iris dataset ашиглах
+iris = load_iris()
+X, y = iris.data, iris.target
+
+# Train/Test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+# Model сургах
+clf = DecisionTreeClassifier()
+clf.fit(X_train, y_train)
+
+# Шалгах
+accuracy = clf.score(X_test, y_test)
+print(f"Нарийвчлал: {accuracy * 100:.2f}%")
+
+# Neural Network (TensorFlow/Keras)
+import tensorflow as tf
+from tensorflow import keras
+
+# Sequential model үүсгэх
+model = keras.Sequential([
+    keras.layers.Dense(64, activation='relu', input_shape=(10,)),
+    keras.layers.Dense(32, activation='relu'),
+    keras.layers.Dense(1, activation='sigmoid')
+])
+
+# Model compile хийх
+model.compile(
+    optimizer='adam',
+    loss='binary_crossentropy',
+    metrics=['accuracy']
+)
+
+# Model сургах
+# model.fit(X_train, y_train, epochs=10, batch_size=32)
+
+# Clustering (K-Means)
+from sklearn.cluster import KMeans
+import numpy as np
+
+# Өгөгдөл
+X = np.array([[1, 2], [1, 4], [1, 0],
+              [10, 2], [10, 4], [10, 0]])
+
+# K-Means clustering
+kmeans = KMeans(n_clusters=2, random_state=0)
+kmeans.fit(X)
+
+# Бүлэглэл
+labels = kmeans.labels_
+print("Бүлэглэл:", labels)
+
+# Text Classification
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+# Текст өгөгдөл
+texts = ['Би Python дуртай', 'Python хялбар', 'JavaScript сайн']
+labels = [1, 1, 0]  # 1 = эерэг, 0 = сөрөг
+
+# Vectorization
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(texts)
+
+# Model сургах
+classifier = MultinomialNB()
+classifier.fit(X, labels)
+
+# Шинэ текст таамаглах
+new_text = ['Python програмчлал']
+new_X = vectorizer.transform(new_text)
+prediction = classifier.predict(new_X)
+print("Таамаглал:", prediction)`,
+      language: "python",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "Linear Regression model сургах",
+          "Classification model (Decision Tree) хийх",
+          "K-Means clustering ашиглан өгөгдөл бүлэглэх",
+          "Text classification хийх",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "Neural Network үүсгэх (TensorFlow/Keras)",
+          "Model evaluation хийх (accuracy, precision, recall)",
+          "Overfitting-оос сэргийлэх (regularization)",
+          "Cross-validation ашиглах",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "CNN ашиглан зураг ангилах",
+          "RNN/LSTM ашиглан текст үүсгэх",
+          "Transfer Learning ашиглах",
+          "Model deployment хийх",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "Machine Learning гэж юу вэ?",
+        options: [
+          "Компьютер суралцаж дадлага хийх",
+          "Машин засах технологи",
+          "Интернетийн хурд нэмэгдүүлэх",
+          "Программ бичих арга",
+        ],
+        correctAnswer: 0,
+        explanation: "Machine Learning нь компьютерт программчлалгүйгээр өгөгдлөөс суралцаж дадлага хийх боломж олгодог.",
+      },
+      {
+        question: "Supervised Learning гэж юу вэ?",
+        options: [
+          "Label-тэй өгөгдлөөс суралцах",
+          "Label-гүй өгөгдлөөс суралцах",
+          "Багш заадаг систем",
+          "Автоматаар ажилладаг систем",
+        ],
+        correctAnswer: 0,
+        explanation: "Supervised Learning нь label (answer) бүхий өгөгдлөөс суралцах machine learning төрөл юм.",
+      },
+      {
+        question: "Neural Network гэж юу вэ?",
+        options: [
+          "Интернетийн сүлжээ",
+          "Хүний тархины загварчилсан сүлжээ",
+          "Компьютерийн сүлжээ",
+          "WiFi сүлжээ",
+        ],
+        correctAnswer: 1,
+        explanation: "Neural Network нь хүний тархины загварчилсан сүлжээ бөгөөд neurons (node) болон layer-ээс бүрдэнэ.",
+      },
+      {
+        question: "Overfitting гэж юу вэ?",
+        options: [
+          "Model хэт сайн суралцсан",
+          "Model training өгөгдөлд хэт сайн, шинэ өгөгдөлд муу",
+          "Model муу суралцсан",
+          "Model суралцаагүй",
+        ],
+        correctAnswer: 1,
+        explanation: "Overfitting нь model training өгөгдөлд хэт сайн ажилладаг боловч шинэ өгөгдөлд муу ажилладаг асуудал юм.",
+      },
+      {
+        question: "Python дээр хамгийн түгээмэл Machine Learning library аль нь вэ?",
+        options: ["NumPy", "Pandas", "Scikit-learn", "Matplotlib"],
+        correctAnswer: 2,
+        explanation: "Scikit-learn нь Python дээрх хамгийн түгээмэл Machine Learning library юм.",
+      },
+    ],
+  },
+  "computer-vision": {
+    slug: "computer-vision",
+    title: "Computer Vision",
+    icon: "👁️",
+    description: "Компьютерийн хараа ба зураг боловсруулалт",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `Computer Vision (Компьютерийн хараа) нь компьютерт зургийг ойлгож, боловсруулах, таних чадвар олгох AI-ийн салбар юм. Computer Vision нь хүний харааны системийг загварчилж, компьютерт зургийг ойлгох, таних, шинжилгээ хийх боломжийг олгодог.
+
+Computer Vision-ийн хэрэглээ:
+- Нүүр таних (Face recognition)
+- Объект илрүүлэх (Object detection)
+- Зураг ангилах (Image classification)
+- Автомашины удирдлага (Self-driving cars)
+- Эмнэлгийн зураг шинжилгээ (Medical imaging)
+- QR code, barcode унших
+- Зураг засварлах (Image editing)
+- Augmented Reality (AR)
+
+Google, Facebook, Tesla, Amazon зэрэг компаниуд Computer Vision өргөнөөр ашигладаг.`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**Computer Vision суралцах шалтгаанууд:**
+
+• Ирээдүйн технологи - AR, VR, self-driving cars
+• Өндөр цалин - CV engineer-үүд өндөр цалинтай
+• Олон салбарт хэрэглэгдэнэ - Эрүүл мэнд, хөдөлгөөнт тээвэр, худалдаа
+• Бодит асуудал шийдэх - Нүүр таних, объект илрүүлэх
+• Automation - Зураг автоматаар боловсруулах
+• Том компаниуд ашигладаг - Google, Tesla, Amazon
+• Эрэлт өндөр - CV мэргэжилтэн хайж байгаа компани олон
+• Creativity - Зураг үүсгэх, засварлах AI`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**Image Processing:**
+Зураг боловсруулах - шүүх, өнгө өөрчлөх, хэмжээ өөрчлөх.
+
+**Image Classification:**
+Зураг ямар ангилалд хамаарах таних. Жишээ: Нохой эсвэл муур.
+
+**Object Detection:**
+Зураг доторх объектуудыг олох, байрлал тодорхойлох.
+
+**Face Recognition:**
+Нүүр таних, хүнийг таних.
+
+**Convolutional Neural Networks (CNN):**
+Зураг танихдаа хамгийн сайн ажилладаг neural network.
+
+**Image Segmentation:**
+Зураг доторх хэсгүүдийг тусгаарлах.
+
+**Feature Extraction:**
+Зургийн онцлог шинж чанарыг олох.
+
+**Popular Libraries:**
+- OpenCV: Зураг боловсруулах
+- TensorFlow/Keras: Deep learning
+- PyTorch: Deep learning
+- PIL/Pillow: Зураг унших, засварлах
+- YOLO: Real-time object detection`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `# Image Processing with OpenCV
+import cv2
+import numpy as np
+
+# Зураг унших
+img = cv2.imread('image.jpg')
+
+# Зургийн хэмжээ
+height, width = img.shape[:2]
+print(f"Хэмжээ: {width}x{height}")
+
+# Зураг хэмжээ өөрчлөх
+resized = cv2.resize(img, (800, 600))
+
+# Хар цагаан болгох
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# Зураг шүүх (blur)
+blurred = cv2.GaussianBlur(img, (15, 15), 0)
+
+# Edge detection (Canny)
+edges = cv2.Canny(gray, 100, 200)
+
+# Зураг хадгалах
+cv2.imwrite('output.jpg', resized)
+
+# Image Classification with TensorFlow/Keras
+import tensorflow as tf
+from tensorflow import keras
+from tensorflow.keras import layers
+
+# CNN Model үүсгэх
+model = keras.Sequential([
+    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+    layers.MaxPooling2D((2, 2)),
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D((2, 2)),
+    layers.Flatten(),
+    layers.Dense(64, activation='relu'),
+    layers.Dense(10, activation='softmax')
+])
+
+# Model compile
+model.compile(
+    optimizer='adam',
+    loss='sparse_categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+# Face Detection with OpenCV
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+# Нүүр илрүүлэх
+faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+
+# Нүүр дээр тэгш өнцөгт зурах
+for (x, y, w, h) in faces:
+    cv2.rectangle(img, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
+# Object Detection with YOLO
+from ultralytics import YOLO
+
+# YOLO model ачаалах
+model = YOLO('yolov8n.pt')
+
+# Объект илрүүлэх
+results = model('image.jpg')
+
+# Үр дүн харуулах
+for result in results:
+    boxes = result.boxes
+    for box in boxes:
+        # Объектын ангилал
+        cls = int(box.cls[0])
+        # Нарийвчлал
+        conf = float(box.conf[0])
+        print(f"Объект: {model.names[cls]}, Нарийвчлал: {conf:.2f}")
+
+# Image Augmentation
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+datagen = ImageDataGenerator(
+    rotation_range=20,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    horizontal_flip=True,
+    zoom_range=0.2
+)
+
+# Зураг өөрчлөх
+augmented = datagen.flow_from_directory('data/', save_to_dir='augmented/')`,
+      language: "python",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "OpenCV ашиглан зураг унших, хадгалах",
+          "Зураг хэмжээ өөрчлөх, хар цагаан болгох",
+          "Edge detection хийх (Canny)",
+          "Basic image filtering хийх",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "CNN ашиглан зураг ангилах",
+          "Face detection хийх",
+          "Object detection (YOLO) ашиглах",
+          "Image augmentation хийх",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "Real-time video processing",
+          "Image segmentation хийх",
+          "Transfer learning ашиглан custom model сургах",
+          "AR application үүсгэх",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "Computer Vision гэж юу вэ?",
+        options: [
+          "Компьютерийн дэлгэц",
+          "Зураг, видеог ойлгох AI",
+          "Нүдний шинжилгээ",
+          "3D график",
+        ],
+        correctAnswer: 1,
+        explanation: "Computer Vision нь зураг болон видеог ойлгож боловсруулах AI-ийн салбар юм.",
+      },
+      {
+        question: "CNN гэж юу вэ?",
+        options: [
+          "Computer Network",
+          "Convolutional Neural Network - зураг танихдаа сайн",
+          "Central Network",
+          "Cloud Network",
+        ],
+        correctAnswer: 1,
+        explanation: "CNN (Convolutional Neural Network) нь зураг танихдаа хамгийн сайн ажилладаг neural network юм.",
+      },
+      {
+        question: "Object Detection гэж юу вэ?",
+        options: [
+          "Объект үүсгэх",
+          "Зураг доторх объектуудыг олох, байрлал тодорхойлох",
+          "Объект устгах",
+          "Объект хадгалах",
+        ],
+        correctAnswer: 1,
+        explanation: "Object Detection нь зураг доторх объектуудыг олох, байрлал тодорхойлох технологи юм.",
+      },
+      {
+        question: "OpenCV гэж юу вэ?",
+        options: [
+          "Open Computer Vision - зураг боловсруулах library",
+          "Open Code",
+          "Open Cloud",
+          "Open Codebase",
+        ],
+        correctAnswer: 0,
+        explanation: "OpenCV (Open Source Computer Vision Library) нь зураг болон видеог боловсруулах хамгийн алдартай library юм.",
+      },
+      {
+        question: "YOLO гэж юу вэ?",
+        options: [
+          "You Only Live Once",
+          "You Only Look Once - real-time object detection algorithm",
+          "Your Own Language Object",
+          "Young Online Learning Object",
+        ],
+        correctAnswer: 1,
+        explanation: "YOLO (You Only Look Once) нь real-time object detection хийх хурдан алгоритм юм.",
+      },
+    ],
+  },
+  nlp: {
+    slug: "nlp",
+    title: "Neural Language Model",
+    icon: "💬",
+    description: "Байгалийн хэл боловсруулалт ба neural language models",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `NLP (Natural Language Processing) буюу Байгалийн хэл боловсруулалт нь хүний хэлийг компьютер ойлгож, боловсруулах, үүсгэх чадвар олгох AI-ийн салбар юм. Neural Language Models нь NLP-ийн хамгийн дэвшилтэт технологи бөгөөд transformer архитектур ашиглан текст ойлгож, үүсгэх чадвартай.
+
+NLP-ийн хэрэглээ:
+- ChatGPT, GPT-4 зэрэг chatbot
+- Орчуулга (Google Translate)
+- Sentiment analysis (Сэтгэл санаа шинжилгээ)
+- Text summarization (Текст хураангуйлах)
+- Question answering
+- Text generation
+- Named Entity Recognition (NER)
+- Speech recognition
+
+OpenAI, Google, Microsoft зэрэг компаниуд NLP-ийн дэвшилтэт model-ууд үүсгэж байна.`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**NLP суралцах шалтгаанууд:**
+
+• ChatGPT, GPT-4 - Одоогийн хамгийн алдартай AI
+• Орчуулга - Хэл орчуулах систем
+• Chatbot - Хэрэглэгчтэй харилцах AI
+• Sentiment analysis - Сошиал медиа дээрх сэтгэл санаа шинжилгээ
+• Text generation - Текст автоматаар үүсгэх
+• Өндөр цалин - NLP engineer-үүд өндөр цалинтай
+• Олон салбарт хэрэглэгдэнэ - Бизнес, эрүүл мэнд, боловсрол
+• Эрэлт өндөр - NLP мэргэжилтэн хайж байгаа компани олон`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**Tokenization:**
+Текст-ийг жижиг хэсэг (token) болгон хуваах.
+
+**Word Embeddings:**
+Үгсийг тоон вектор хэлбэрт шилжүүлэх. Word2Vec, GloVe.
+
+**Transformer Architecture:**
+Attention mechanism ашигласан neural network. GPT, BERT-ийн үндэс.
+
+**Language Models:**
+Текст үүсгэх, таамаглах model. GPT, BERT, T5.
+
+**Fine-tuning:**
+Pre-trained model-ийг тодорхой даалгаварт тохируулах.
+
+**Prompt Engineering:**
+AI-д зөв зааварчилгаа өгөх.
+
+**Text Classification:**
+Текст ямар ангилалд хамаарах таних.
+
+**Named Entity Recognition (NER):**
+Текст доторх нэр, байршил, огноо зэргийг олох.
+
+**Popular Libraries:**
+- Transformers (Hugging Face): Pre-trained models
+- spaCy: NLP library
+- NLTK: Natural Language Toolkit
+- OpenAI API: GPT models
+- LangChain: LLM applications`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `# Text Classification with spaCy
+import spacy
+
+# spaCy model ачаалах
+nlp = spacy.load("en_core_web_sm")
+
+# Текст боловсруулах
+text = "I love programming with Python"
+doc = nlp(text)
+
+# Үг, tag, entity харах
+for token in doc:
+    print(f"{token.text} - {token.pos_} - {token.tag_}")
+
+# Named Entity Recognition
+text = "Apple is looking at buying U.K. startup for $1 billion"
+doc = nlp(text)
+for ent in doc.ents:
+    print(f"{ent.text} - {ent.label_}")
+
+# Sentiment Analysis
+from transformers import pipeline
+
+classifier = pipeline("sentiment-analysis")
+result = classifier("I love this product!")
+print(result)
+
+# Text Generation with GPT
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
+
+tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+model = GPT2LMHeadModel.from_pretrained("gpt2")
+
+text = "The future of AI is"
+inputs = tokenizer.encode(text, return_tensors="pt")
+outputs = model.generate(inputs, max_length=50, num_return_sequences=1)
+generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(generated_text)
+
+# OpenAI API (ChatGPT)
+import openai
+
+openai.api_key = "your-api-key"
+
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "What is Python?"}
+    ]
+)
+
+print(response.choices[0].message.content)
+
+# Text Summarization
+from transformers import pipeline
+
+summarizer = pipeline("summarization")
+text = """
+Artificial intelligence is transforming the world...
+[long text]
+"""
+
+summary = summarizer(text, max_length=100, min_length=30)
+print(summary[0]['summary_text'])
+
+# Tokenization
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+text = "Hello, how are you?"
+tokens = tokenizer.tokenize(text)
+print(tokens)
+
+# Word Embeddings
+import gensim.downloader as api
+
+# Pre-trained Word2Vec model
+word_vectors = api.load("word2vec-google-news-300")
+
+# Үгтэй төстэй үгс
+similar_words = word_vectors.most_similar("python")
+print(similar_words)
+
+# Text Translation
+from transformers import pipeline
+
+translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-mn")
+text = "Hello, how are you?"
+translated = translator(text)
+print(translated[0]['translation_text'])`,
+      language: "python",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "spaCy ашиглан текст боловсруулах",
+          "Tokenization хийх",
+          "Named Entity Recognition хийх",
+          "Basic sentiment analysis хийх",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "Text classification model сургах",
+          "Text generation (GPT) ашиглах",
+          "Text summarization хийх",
+          "Translation model ашиглах",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "Chatbot үүсгэх (OpenAI API)",
+          "Fine-tuning pre-trained model",
+          "LangChain ашиглан LLM application",
+          "RAG (Retrieval Augmented Generation) систем",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "NLP гэж юу вэ?",
+        options: [
+          "Network Language Protocol",
+          "Natural Language Processing - хүний хэлийг ойлгох AI",
+          "New Language Program",
+          "Natural Learning Process",
+        ],
+        correctAnswer: 1,
+        explanation: "NLP (Natural Language Processing) нь хүний хэлийг компьютер ойлгож, боловсруулах AI-ийн салбар юм.",
+      },
+      {
+        question: "Transformer architecture-ийн гол онцлог юу вэ?",
+        options: [
+          "Convolutional layers",
+          "Attention mechanism",
+          "Recurrent layers",
+          "Linear layers",
+        ],
+        correctAnswer: 1,
+        explanation: "Transformer architecture нь attention mechanism ашигладаг бөгөөд энэ нь GPT, BERT зэрэг model-уудын үндэс юм.",
+      },
+      {
+        question: "GPT гэж юу вэ?",
+        options: [
+          "General Purpose Technology",
+          "Generative Pre-trained Transformer - текст үүсгэх model",
+          "General Programming Tool",
+          "Graph Processing Technology",
+        ],
+        correctAnswer: 1,
+        explanation: "GPT (Generative Pre-trained Transformer) нь OpenAI-аас гаргасан текст үүсгэх neural language model юм.",
+      },
+      {
+        question: "Tokenization гэж юу вэ?",
+        options: [
+          "Токен үүсгэх",
+          "Текст-ийг жижиг хэсэг (token) болгон хуваах",
+          "Токен хадгалах",
+          "Токен шалгах",
+        ],
+        correctAnswer: 1,
+        explanation: "Tokenization нь текст-ийг жижиг хэсэг (token) болгон хуваах процесс юм.",
+      },
+      {
+        question: "Fine-tuning гэж юу вэ?",
+        options: [
+          "Model-ийг бүрэн дахин сургах",
+          "Pre-trained model-ийг тодорхой даалгаварт тохируулах",
+          "Model-ийг устгах",
+          "Model-ийг хадгалах",
+        ],
+        correctAnswer: 1,
+        explanation: "Fine-tuning нь аль хэдийн сургасан (pre-trained) model-ийг тодорхой даалгаварт тохируулах процесс юм.",
+      },
+    ],
+  },
+  "prompt-engineering": {
+    slug: "prompt-engineering",
+    title: "Prompt Engineering",
+    icon: "🎯",
+    description: "AI prompt инженерчлэл - ChatGPT, GPT-4-т зөв зааварчилгаа өгөх",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `Prompt Engineering (Зааварчилгааны инженерчлэл) нь AI model-уудад (ChatGPT, GPT-4, Claude зэрэг) зөв зааварчилгаа (prompt) өгөж, хамгийн сайн үр дүн авах ур чадвар юм. Prompt Engineering нь AI-тай хамтран ажиллах хамгийн чухал ур чадвар болоод байна.
+
+Prompt Engineering-ийн хэрэглээ:
+- ChatGPT, GPT-4-т зөв асуулт асуух
+- AI-д нарийн зааварчилгаа өгөх
+- Code generation - Программ код үүсгэх
+- Content creation - Текст, блог, нийтлэл үүсгэх
+- Data analysis - Өгөгдөл шинжилгээ хийх
+- Translation - Орчуулга хийх
+- Summarization - Хураангуйлах
+
+Орчин үед олон компани Prompt Engineer-үүд ажилд авч байна. Энэ нь ирээдүйн хамгийн эрэлттэй ур чадваруудын нэг болоод байна.`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**Prompt Engineering суралцах шалтгаанууд:**
+
+• AI-тай үр дүнтэй ажиллах - Зөв prompt = сайн үр дүн
+• Өндөр цалин - Prompt Engineer-үүд өндөр цалинтай
+• Бүх салбарт хэрэгтэй - Програмчлал, маркетинг, боловсрол
+• Productivity нэмэгдүүлэх - Ажлыг хурдан, үр дүнтэй хийх
+• Code generation - Программ код хурдан үүсгэх
+• Content creation - Текст, нийтлэл автоматаар үүсгэх
+• Эрэлт өндөр - Олон компани Prompt Engineer хайж байна
+• Ирээдүйн ур чадвар - AI-тай ажиллах стандарт болоод байна`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**Prompt Structure:**
+- Context: Нөхцөл байдал, мэдээлэл
+- Task: Хийх зүйл
+- Format: Үр дүнгийн хэлбэр
+- Examples: Жишээ
+
+**Prompt Techniques:**
+- Zero-shot: Жишээгүйгээр зааварчилгаа өгөх
+- Few-shot: Цөөн жишээ өгөх
+- Chain-of-Thought: Алхам алхмаар бодох
+- Role-playing: Тодорхой дүр үүсгэх
+
+**Best Practices:**
+- Тодорхой, нарийн зааварчилгаа
+- Context нэмэх
+- Format заах
+- Examples өгөх
+- Iterative refinement
+
+**Common Patterns:**
+- "Act as..." - Дүр үүсгэх
+- "Step by step" - Алхам алхмаар
+- "Let's think..." - Бодох процесс
+- "Format as..." - Хэлбэр заах
+
+**Tools:**
+- OpenAI Playground
+- ChatGPT
+- Claude
+- LangChain
+- Prompt templates`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `# OpenAI API ашиглан Prompt Engineering
+import openai
+
+openai.api_key = "your-api-key"
+
+# 1. Basic Prompt
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "user", "content": "Python гэж юу вэ?"}
+    ]
+)
+
+# 2. Role-playing Prompt
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "Та бол туршлагатай программист."},
+        {"role": "user", "content": "React component хэрхэн үүсгэх вэ?"}
+    ]
+)
+
+# 3. Few-shot Prompt (Жишээ өгөх)
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "user", "content": """
+Жишээ:
+Input: "HTML"
+Output: "HTML нь вэб хуудасны бүтэц юм."
+
+Input: "CSS"
+Output: "CSS нь вэб хуудасны загвар юм."
+
+Input: "JavaScript"
+Output:
+"""}
+    ]
+)
+
+# 4. Chain-of-Thought Prompt
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "user", "content": """
+Асуудал: 5 хүн 5 өдөрт 5 ажил хийвэл, 10 хүн 10 өдөрт хэдэн ажил хийх вэ?
+
+Алхам алхмаар бодоорой:
+1. Нэг хүн нэг өдөрт хэдэн ажил хийх вэ?
+2. 10 хүн нэг өдөрт хэдэн ажил хийх вэ?
+3. 10 хүн 10 өдөрт хэдэн ажил хийх вэ?
+"""}
+    ]
+)
+
+# 5. Format-specific Prompt
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "user", "content": """
+Дараах өгөгдлийг JSON форматтайгаар буцаа:
+- Нэр: Болд
+- Нас: 17
+- Хичээл: Python, JavaScript
+"""}
+    ]
+)
+
+# 6. Code Generation Prompt
+response = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "system", "content": "Та бол туршлагатай Python программист."},
+        {"role": "user", "content": """
+Python ашиглан calculator class үүсгэ. 
+- add, subtract, multiply, divide method-ууд байх
+- Error handling хийх
+- Docstring нэмэх
+"""}
+    ]
+)
+
+# 7. Iterative Refinement
+# Эхний prompt
+prompt1 = "Блог бич"
+response1 = openai.ChatCompletion.create(...)
+
+# Сайжруулсан prompt
+prompt2 = """
+Блог бич: "Python суралцах 5 шалтгаан"
+- 500-800 үг
+- SEO-friendly
+- Жишээ код агуулах
+- Дүгнэлт хэсэг байх
+"""
+response2 = openai.ChatCompletion.create(...)
+
+# Prompt Template
+def create_prompt(topic, format_type, length):
+    return f"""
+Сэдэв: {topic}
+Формат: {format_type}
+Урт: {length} үг
+
+Дараах бүтэцтэй байх:
+1. Оршил
+2. Гол хэсэг
+3. Дүгнэлт
+"""
+`,
+      language: "python",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "ChatGPT-д энгийн асуулт асуух",
+          "Role-playing prompt ашиглах",
+          "Format-specific prompt (JSON, markdown) хийх",
+          "Few-shot prompt (жишээ өгөх) хийх",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "Chain-of-Thought prompt хийх",
+          "Code generation prompt үүсгэх",
+          "Content creation prompt (блог, нийтлэл)",
+          "Data analysis prompt хийх",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "Prompt template систем үүсгэх",
+          "LangChain ашиглан prompt chain хийх",
+          "A/B testing хийх (өөр өөр prompt-ууд)",
+          "Production-ready prompt system",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "Prompt Engineering гэж юу вэ?",
+        options: [
+          "Программ бичих",
+          "AI model-уудад зөв зааварчилгаа өгөж сайн үр дүн авах",
+          "Компьютер засах",
+          "Интернет ашиглах",
+        ],
+        correctAnswer: 1,
+        explanation: "Prompt Engineering нь AI model-уудад (ChatGPT, GPT-4) зөв зааварчилгаа өгөж, хамгийн сайн үр дүн авах ур чадвар юм.",
+      },
+      {
+        question: "Few-shot prompt гэж юу вэ?",
+        options: [
+          "Жишээгүйгээр зааварчилгаа өгөх",
+          "Цөөн жишээ өгөх",
+          "Олон жишээ өгөх",
+          "Жишээ шаардлагагүй",
+        ],
+        correctAnswer: 1,
+        explanation: "Few-shot prompt нь AI-д цөөн жишээ өгөж, хүссэн формат, хэв маягийг заах арга юм.",
+      },
+      {
+        question: "Chain-of-Thought prompt-ийн давуу тал юу вэ?",
+        options: [
+          "Хурдан хариулах",
+          "Алхам алхмаар бодох процесс харуулах, илүү нарийвчилсан хариу авах",
+          "Бага санах ой ашиглах",
+          "Илүү хялбар",
+        ],
+        correctAnswer: 1,
+        explanation: "Chain-of-Thought prompt нь AI-д алхам алхмаар бодох процесс зааж, илүү нарийвчилсан, зөв хариу авах боломжийг олгодог.",
+      },
+      {
+        question: "Role-playing prompt-ийн зорилго юу вэ?",
+        options: [
+          "Тоглоом тоглох",
+          "AI-д тодорхой дүр үүсгэж, тухайн дүрт тохирсон хариу авах",
+          "Дүр солих",
+          "Дүр үүсгэхгүй",
+        ],
+        correctAnswer: 1,
+        explanation: "Role-playing prompt нь AI-д тодорхой дүр (жишээ: туршлагатай программист, багш) үүсгэж, тухайн дүрт тохирсон мэргэжлийн хариу авах арга юм.",
+      },
+      {
+        question: "Prompt-ийг сайжруулах хамгийн сайн арга юу вэ?",
+        options: [
+          "Богино prompt",
+          "Тодорхой, нарийн зааварчилгаа, context нэмэх, iterative refinement",
+          "Олон удаа асуух",
+          "Том prompt",
+        ],
+        correctAnswer: 1,
+        explanation: "Prompt-ийг сайжруулах хамгийн сайн арга нь тодорхой, нарийн зааварчилгаа өгөх, context нэмэх, format заах, iterative refinement (дараа дараа сайжруулах) хийх юм.",
+      },
+    ],
+  },
+  "web-app-structure": {
+    slug: "web-app-structure",
+    title: "Web/App Structure and Technology",
+    icon: "🏗️",
+    description: "Вэб болон апликейшний бүтэц, архитектур, технологиуд",
+    sections: [
+      {
+        id: "introduction",
+        title: "Танилцуулга",
+        icon: <BookOpen className="h-5 w-5" />,
+        content: `Web/App Structure and Technology нь вэб болон мобайл апликейшний бүтэц, архитектур, технологийн стек, design pattern-уудыг судалдаг сэдэв юм. Орчин үеийн апликейшн үүсгэхэд зөв архитектур, технологийн сонголт маш чухал.
+
+Вэб апликейшний бүтэц:
+- Frontend: Хэрэглэгчийн интерфейс (React, Vue, Angular)
+- Backend: Серверийн логик (Node.js, Python, Java)
+- Database: Өгөгдөл хадгалах (MongoDB, PostgreSQL, MySQL)
+- API: Frontend болон Backend хоорондын холбоо
+
+Мобайл апликейшний бүтэц:
+- Native: iOS (Swift), Android (Kotlin)
+- Cross-platform: React Native, Flutter
+- Hybrid: Ionic, Cordova
+
+Architecture Patterns:
+- MVC (Model-View-Controller)
+- RESTful API
+- Microservices
+- Serverless
+- Monolithic vs Microservices`,
+      },
+      {
+        id: "why",
+        title: "Яагаад хэрэгтэй вэ",
+        icon: <Target className="h-5 w-5" />,
+        content: `**Web/App Structure суралцах шалтгаанууд:**
+
+• Full-stack хөгжүүлэгч болох - Frontend болон Backend мэдэх
+• Зөв архитектур сонгох - Scalable, maintainable апликейшн
+• Технологийн стек сонгох - Төсөлд тохирох технологи
+• Design patterns мэдэх - Код зохион байгуулалт
+• Performance optimization - Хурдан, хэмжээтэй апликейшн
+• Security best practices - Аюулгүй апликейшн
+• DevOps мэдэх - Deploy, CI/CD
+• Карьерын боломж - Full-stack developer, architect`,
+      },
+      {
+        id: "concepts",
+        title: "Үндсэн ойлголтууд",
+        icon: <Lightbulb className="h-5 w-5" />,
+        content: `**Frontend Technologies:**
+- HTML, CSS, JavaScript
+- React, Vue, Angular
+- Next.js, Nuxt.js
+- Tailwind CSS, Bootstrap
+
+**Backend Technologies:**
+- Node.js, Express
+- Python (Django, Flask)
+- Java (Spring Boot)
+- PHP (Laravel)
+
+**Database:**
+- SQL: PostgreSQL, MySQL
+- NoSQL: MongoDB, Redis
+- GraphQL
+
+**API:**
+- RESTful API
+- GraphQL
+- WebSocket
+
+**Architecture Patterns:**
+- MVC: Model-View-Controller
+- MVP: Model-View-Presenter
+- MVVM: Model-View-ViewModel
+- Microservices
+- Serverless
+
+**Deployment:**
+- Vercel, Netlify (Frontend)
+- AWS, Google Cloud, Azure
+- Docker, Kubernetes
+- CI/CD: GitHub Actions, Jenkins`,
+      },
+    ],
+    codeExample: {
+      title: "Жишээ код",
+      icon: <Code className="h-5 w-5" />,
+      code: `// Full-stack App Structure Example
+
+// 1. Frontend (React + Next.js)
+// app/page.tsx
+export default function HomePage() {
+  const [data, setData] = useState([]);
+  
+  useEffect(() => {
+    fetch('/api/users')
+      .then(res => res.json())
+      .then(data => setData(data));
+  }, []);
+  
+  return (
+    <div>
+      <h1>Users</h1>
+      {data.map(user => (
+        <div key={user.id}>{user.name}</div>
+      ))}
+    </div>
+  );
+}
+
+// 2. Backend API (Next.js API Route)
+// app/api/users/route.ts
+export async function GET() {
+  const users = await db.users.findMany();
+  return Response.json(users);
+}
+
+export async function POST(request: Request) {
+  const { name, email } = await request.json();
+  const user = await db.users.create({
+    data: { name, email }
+  });
+  return Response.json(user);
+}
+
+// 3. Database Schema (Prisma)
+// prisma/schema.prisma
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+// 4. RESTful API Structure
+// GET    /api/users      - Бүх хэрэглэгч
+// GET    /api/users/:id  - Нэг хэрэглэгч
+// POST   /api/users      - Шинэ хэрэглэгч
+// PUT    /api/users/:id  - Хэрэглэгч шинэчлэх
+// DELETE /api/users/:id  - Хэрэглэгч устгах
+
+// 5. MVC Pattern Example
+// Model (models/User.js)
+class User {
+  constructor(name, email) {
+    this.name = name;
+    this.email = email;
+  }
+  
+  save() {
+    // Database-д хадгалах
+  }
+}
+
+// View (components/UserView.jsx)
+function UserView({ user }) {
+  return (
+    <div>
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+    </div>
+  );
+}
+
+// Controller (controllers/userController.js)
+export function getUser(req, res) {
+  const user = User.findById(req.params.id);
+  res.json(user);
+}
+
+// 6. Microservices Architecture
+// User Service
+app.get('/api/users', getUserHandler);
+
+// Product Service  
+app.get('/api/products', getProductHandler);
+
+// Order Service
+app.post('/api/orders', createOrderHandler);
+
+// 7. Environment Configuration
+// .env
+DATABASE_URL=postgresql://...
+NEXT_PUBLIC_API_URL=https://api.example.com
+JWT_SECRET=your-secret-key
+
+// 8. Docker Configuration
+// Dockerfile
+FROM node:18
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]`,
+      language: "javascript",
+    },
+    exercises: [
+      {
+        title: "Анхан шатны дасгал",
+        tasks: [
+          "Full-stack app бүтэц үүсгэх (Frontend + Backend)",
+          "RESTful API endpoint-ууд үүсгэх",
+          "Database schema дизайн хийх",
+          "Environment variables тохируулах",
+        ],
+      },
+      {
+        title: "Дунд шатны дасгал",
+        tasks: [
+          "MVC pattern ашиглан app хийх",
+          "API authentication (JWT) нэмэх",
+          "Database migration хийх",
+          "Error handling болон validation",
+        ],
+      },
+      {
+        title: "Дэвшилтэт дасгал",
+        tasks: [
+          "Microservices architecture дизайн хийх",
+          "Docker containerization",
+          "CI/CD pipeline тохируулах",
+          "Performance optimization (caching, CDN)",
+        ],
+      },
+    ],
+    quiz: [
+      {
+        question: "Full-stack app гэж юу вэ?",
+        options: [
+          "Зөвхөн frontend",
+          "Frontend болон backend аль алиныг хөгжүүлэх",
+          "Зөвхөн backend",
+          "Database",
+        ],
+        correctAnswer: 1,
+        explanation: "Full-stack app нь frontend (хэрэглэгчийн интерфейс) болон backend (серверийн логик) аль алиныг хөгжүүлдэг апликейшн юм.",
+      },
+      {
+        question: "RESTful API гэж юу вэ?",
+        options: [
+          "REST protocol",
+          "HTTP method-ууд (GET, POST, PUT, DELETE) ашиглах стандарт",
+          "GraphQL",
+          "WebSocket",
+        ],
+        correctAnswer: 1,
+        explanation: "RESTful API нь HTTP method-ууд (GET, POST, PUT, DELETE) ашиглан өгөгдөл солилцох стандарт архитектур юм.",
+      },
+      {
+        question: "MVC pattern гэж юу вэ?",
+        options: [
+          "Model-View-Component",
+          "Model-View-Controller - код зохион байгуулах загвар",
+          "Main-View-Controller",
+          "Module-View-Controller",
+        ],
+        correctAnswer: 1,
+        explanation: "MVC (Model-View-Controller) нь апликейшний кодыг Model (өгөгдөл), View (интерфейс), Controller (логик) гэж хуваах design pattern юм.",
+      },
+      {
+        question: "Microservices architecture-ийн давуу тал юу вэ?",
+        options: [
+          "Хурдан ажиллах",
+          "Scalable, maintainable, бие даасан сервисүүд",
+          "Бага санах ой",
+          "Хялбар код",
+        ],
+        correctAnswer: 1,
+        explanation: "Microservices architecture нь апликейшнийг жижиг, бие даасан сервисүүдэд хувааж, scalable, maintainable болгодог.",
+      },
+      {
+        question: "CI/CD гэж юу вэ?",
+        options: [
+          "Code Integration",
+          "Continuous Integration / Continuous Deployment - автомат тест, deploy",
+          "Code Development",
+          "Code Deployment",
+        ],
+        correctAnswer: 1,
+        explanation: "CI/CD (Continuous Integration / Continuous Deployment) нь код өөрчлөлт хийх бүрд автоматаар тест хийж, deploy хийх процесс юм.",
+      },
+    ],
+  },
+}
+
+// Export subjectsData for use in other pages (like test page)
+export { subjectsData }
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -2205,18 +4276,52 @@ export default async function SubjectPage({ params }: PageProps) {
               )}
 
               {/* Quiz */}
-              {subject.quiz && subject.quiz.length > 0 && (
-                <div className="space-y-4">
-                  <Alert>
-                    <Lightbulb className="h-4 w-4" />
-                    <AlertTitle>Багахан тест</AlertTitle>
-                    <AlertDescription>
-                      Суралцсан зүйлээ шалгаж үзэхийн тулд доорх асуултуудад хариулна уу
-                    </AlertDescription>
-                  </Alert>
-                  <Quiz questions={subject.quiz} />
-                </div>
-              )}
+              {(() => {
+                // Collect all quiz questions from sections and direct quiz array
+                const allQuizQuestions: any[] = []
+                
+                // Collect from sections
+                if (subject.sections && Array.isArray(subject.sections)) {
+                  subject.sections.forEach((section: any) => {
+                    if (section.quiz && Array.isArray(section.quiz)) {
+                      section.quiz.forEach((quiz: any) => {
+                        allQuizQuestions.push({
+                          question: quiz.question,
+                          options: quiz.options || [],
+                          correctAnswer: quiz.correctAnswer || quiz.answer || 0,
+                          explanation: quiz.explanation,
+                        })
+                      })
+                    }
+                  })
+                }
+                
+                // Collect from direct quiz array (backward compatibility)
+                if (subject.quiz && Array.isArray(subject.quiz)) {
+                  subject.quiz.forEach((quiz: any) => {
+                    allQuizQuestions.push({
+                      question: quiz.question,
+                      options: quiz.options || [],
+                      correctAnswer: quiz.correctAnswer || quiz.answer || 0,
+                      explanation: quiz.explanation,
+                    })
+                  })
+                }
+                
+                return allQuizQuestions.length > 0 ? (
+                  <div className="space-y-4">
+                    <Alert>
+                      <Lightbulb className="h-4 w-4" />
+                      <AlertTitle>Багахан тест</AlertTitle>
+                      <AlertDescription>
+                        Суралцсан зүйлээ шалгаж үзэхийн тулд доорх асуултуудад хариулна уу. 
+                        Асуултууд random-р солигдож байрлал өөрчлөгдөнө.
+                      </AlertDescription>
+                    </Alert>
+                    <Quiz questions={allQuizQuestions} randomize={true} maxQuestions={20} />
+                  </div>
+                ) : null
+              })()}
             </div>
           </div>
         </main>

@@ -706,7 +706,9 @@ function Badge({ className, variant, asChild = false, ...props }) {
 
 __turbopack_context__.s([
     "default",
-    ()=>SubjectPage
+    ()=>SubjectPage,
+    "subjectsData",
+    ()=>subjectsData
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navbar$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/navbar.tsx [app-rsc] (ecmascript)");
@@ -3264,6 +3266,7 @@ my_car.brake()`,
         ]
     }
 };
+;
 async function SubjectPage({ params }) {
     const { slug } = await params;
     const subject = subjectsData[slug];
@@ -3275,7 +3278,7 @@ async function SubjectPage({ params }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navbar$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Navbar"], {}, void 0, false, {
                 fileName: "[project]/app/subjects/[slug]/page.tsx",
-                lineNumber: 2128,
+                lineNumber: 2131,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3283,7 +3286,7 @@ async function SubjectPage({ params }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$sidebar$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Sidebar"], {}, void 0, false, {
                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                        lineNumber: 2130,
+                        lineNumber: 2133,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -3301,7 +3304,7 @@ async function SubjectPage({ params }) {
                                                 children: subject.icon
                                             }, void 0, false, {
                                                 fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                lineNumber: 2136,
+                                                lineNumber: 2139,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3311,7 +3314,7 @@ async function SubjectPage({ params }) {
                                                         children: subject.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                        lineNumber: 2138,
+                                                        lineNumber: 2141,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3319,24 +3322,24 @@ async function SubjectPage({ params }) {
                                                         children: subject.description
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                        lineNumber: 2139,
+                                                        lineNumber: 2142,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                lineNumber: 2137,
+                                                lineNumber: 2140,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                        lineNumber: 2135,
+                                        lineNumber: 2138,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                    lineNumber: 2134,
+                                    lineNumber: 2137,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3353,18 +3356,18 @@ async function SubjectPage({ params }) {
                                                                     children: section.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                    lineNumber: 2151,
+                                                                    lineNumber: 2154,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                            lineNumber: 2149,
+                                                            lineNumber: 2152,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                        lineNumber: 2148,
+                                                        lineNumber: 2151,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3374,18 +3377,18 @@ async function SubjectPage({ params }) {
                                                             children: section.content
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                            lineNumber: 2155,
+                                                            lineNumber: 2158,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                        lineNumber: 2154,
+                                                        lineNumber: 2157,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, section.id, true, {
                                                 fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                lineNumber: 2147,
+                                                lineNumber: 2150,
                                                 columnNumber: 17
                                             }, this)),
                                         subject.codeExample && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Card"], {
@@ -3399,18 +3402,18 @@ async function SubjectPage({ params }) {
                                                                 children: subject.codeExample.title
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                lineNumber: 2166,
+                                                                lineNumber: 2169,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                        lineNumber: 2164,
+                                                        lineNumber: 2167,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                    lineNumber: 2163,
+                                                    lineNumber: 2166,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3419,18 +3422,18 @@ async function SubjectPage({ params }) {
                                                         language: subject.codeExample.language
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                        lineNumber: 2170,
+                                                        lineNumber: 2173,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                    lineNumber: 2169,
+                                                    lineNumber: 2172,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                            lineNumber: 2162,
+                                            lineNumber: 2165,
                                             columnNumber: 17
                                         }, this),
                                         subject.exercises && subject.exercises.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Card"], {
@@ -3444,33 +3447,33 @@ async function SubjectPage({ params }) {
                                                                     className: "h-5 w-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                    lineNumber: 2180,
+                                                                    lineNumber: 2183,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardTitle"], {
                                                                     children: "Дасгал ажлууд"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                    lineNumber: 2181,
+                                                                    lineNumber: 2184,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                            lineNumber: 2179,
+                                                            lineNumber: 2182,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardDescription"], {
                                                             children: "Эдгээр дасгалуудыг хийснээр танд суралцсан зүйлээ дадлага хийх боломж олгоно"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                            lineNumber: 2183,
+                                                            lineNumber: 2186,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                    lineNumber: 2178,
+                                                    lineNumber: 2181,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3483,7 +3486,7 @@ async function SubjectPage({ params }) {
                                                                     children: exercise.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                    lineNumber: 2190,
+                                                                    lineNumber: 2193,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -3497,7 +3500,7 @@ async function SubjectPage({ params }) {
                                                                                     children: taskIndex + 1
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                                    lineNumber: 2194,
+                                                                                    lineNumber: 2197,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3505,114 +3508,146 @@ async function SubjectPage({ params }) {
                                                                                     children: task
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                                    lineNumber: 2197,
+                                                                                    lineNumber: 2200,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, taskIndex, true, {
                                                                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                            lineNumber: 2193,
+                                                                            lineNumber: 2196,
                                                                             columnNumber: 29
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                                    lineNumber: 2191,
+                                                                    lineNumber: 2194,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, index, true, {
                                                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                            lineNumber: 2189,
+                                                            lineNumber: 2192,
                                                             columnNumber: 23
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                    lineNumber: 2187,
+                                                    lineNumber: 2190,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                            lineNumber: 2177,
+                                            lineNumber: 2180,
                                             columnNumber: 17
                                         }, this),
-                                        subject.quiz && subject.quiz.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Alert"], {
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__["Lightbulb"], {
-                                                            className: "h-4 w-4"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                            lineNumber: 2211,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AlertTitle"], {
-                                                            children: "Багахан тест"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                            lineNumber: 2212,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AlertDescription"], {
-                                                            children: "Суралцсан зүйлээ шалгаж үзэхийн тулд доорх асуултуудад хариулна уу"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                            lineNumber: 2213,
-                                                            columnNumber: 21
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                    lineNumber: 2210,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$quiz$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Quiz"], {
-                                                    questions: subject.quiz
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                                    lineNumber: 2217,
-                                                    columnNumber: 19
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                            lineNumber: 2209,
-                                            columnNumber: 17
-                                        }, this)
+                                        (()=>{
+                                            // Collect all quiz questions from sections and direct quiz array
+                                            const allQuizQuestions = [];
+                                            // Collect from sections
+                                            if (subject.sections && Array.isArray(subject.sections)) {
+                                                subject.sections.forEach((section)=>{
+                                                    if (section.quiz && Array.isArray(section.quiz)) {
+                                                        section.quiz.forEach((quiz)=>{
+                                                            allQuizQuestions.push({
+                                                                question: quiz.question,
+                                                                options: quiz.options || [],
+                                                                correctAnswer: quiz.correctAnswer || quiz.answer || 0,
+                                                                explanation: quiz.explanation
+                                                            });
+                                                        });
+                                                    }
+                                                });
+                                            }
+                                            // Collect from direct quiz array (backward compatibility)
+                                            if (subject.quiz && Array.isArray(subject.quiz)) {
+                                                subject.quiz.forEach((quiz)=>{
+                                                    allQuizQuestions.push({
+                                                        question: quiz.question,
+                                                        options: quiz.options || [],
+                                                        correctAnswer: quiz.correctAnswer || quiz.answer || 0,
+                                                        explanation: quiz.explanation
+                                                    });
+                                                });
+                                            }
+                                            return allQuizQuestions.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-4",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Alert"], {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__["Lightbulb"], {
+                                                                className: "h-4 w-4"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/subjects/[slug]/page.tsx",
+                                                                lineNumber: 2246,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AlertTitle"], {
+                                                                children: "Багахан тест"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/subjects/[slug]/page.tsx",
+                                                                lineNumber: 2247,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["AlertDescription"], {
+                                                                children: "Суралцсан зүйлээ шалгаж үзэхийн тулд доорх асуултуудад хариулна уу. Асуултууд random-р солигдож байрлал өөрчлөгдөнө."
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/subjects/[slug]/page.tsx",
+                                                                lineNumber: 2248,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/subjects/[slug]/page.tsx",
+                                                        lineNumber: 2245,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$quiz$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Quiz"], {
+                                                        questions: allQuizQuestions,
+                                                        randomize: true,
+                                                        maxQuestions: 20
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/subjects/[slug]/page.tsx",
+                                                        lineNumber: 2253,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/subjects/[slug]/page.tsx",
+                                                lineNumber: 2244,
+                                                columnNumber: 19
+                                            }, this) : null;
+                                        })()
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/subjects/[slug]/page.tsx",
-                                    lineNumber: 2145,
+                                    lineNumber: 2148,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/subjects/[slug]/page.tsx",
-                            lineNumber: 2132,
+                            lineNumber: 2135,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/subjects/[slug]/page.tsx",
-                        lineNumber: 2131,
+                        lineNumber: 2134,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/subjects/[slug]/page.tsx",
-                lineNumber: 2129,
+                lineNumber: 2132,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/app/subjects/[slug]/page.tsx",
-                lineNumber: 2224,
+                lineNumber: 2261,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/subjects/[slug]/page.tsx",
-        lineNumber: 2127,
+        lineNumber: 2130,
         columnNumber: 5
     }, this);
 }

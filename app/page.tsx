@@ -10,9 +10,16 @@ export default function HomePage() {
     { name: "HTML", description: "Вэб хуудасны үндэс", icon: "🌐", href: "/subjects/html" },
     { name: "CSS", description: "Загвар зохион байгуулалт", icon: "🎨", href: "/subjects/css" },
     { name: "JavaScript", description: "Интерактив програмчлал", icon: "⚡", href: "/subjects/javascript" },
+    { name: "ReactJS", description: "Frontend framework", icon: "⚛️", href: "/subjects/reactjs" },
+    { name: "NextJS", description: "React production framework", icon: "▲", href: "/subjects/nextjs" },
     { name: "Python", description: "Програмчлалын үндэс", icon: "🐍", href: "/subjects/python" },
     { name: "Node.js", description: "Backend хөгжүүлэлт", icon: "📦", href: "/subjects/nodejs" },
-    { name: "C++", description: "Системийн програмчлал", icon: "⚙️", href: "/subjects/cpp" },
+    { name: "Cybersecurity", description: "Кибер аюулгүй байдал", icon: "🔒", href: "/subjects/cybersecurity" },
+    { name: "Machine Learning", description: "Машин сургалт", icon: "🤖", href: "/subjects/machine-learning" },
+    { name: "Computer Vision", description: "Компьютерийн хараа", icon: "👁️", href: "/subjects/computer-vision" },
+    { name: "NLP", description: "Байгалийн хэл боловсруулалт", icon: "💬", href: "/subjects/nlp" },
+    { name: "Prompt Engineering", description: "Prompt инженерчлэл", icon: "🎯", href: "/subjects/prompt-engineering" },
+    { name: "Web/App Structure", description: "Архитектур ба бүтэц", icon: "🏗️", href: "/subjects/web-app-structure" },
   ]
 
   const features = [
@@ -55,12 +62,15 @@ export default function HomePage() {
                 бодит төслүүд дээр практик ажиллаарай.
               </p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap justify-center">
               <Button asChild size="lg">
                 <Link href="/subjects">Хичээл эхлүүлэх</Link>
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link href="/subjects">Хичээлүүд үзэх</Link>
+              </Button>
+              <Button asChild variant="secondary" size="lg">
+                <Link href="/test">Тест авах</Link>
               </Button>
             </div>
           </div>

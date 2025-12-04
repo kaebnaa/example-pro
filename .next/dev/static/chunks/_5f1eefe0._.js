@@ -616,9 +616,18 @@ function Navbar() {
                                     lineNumber: 24,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$theme$2d$toggle$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThemeToggle"], {}, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/test",
+                                    className: "text-sm font-medium text-muted-foreground hover:text-foreground transition-colors",
+                                    children: "Тест"
+                                }, void 0, false, {
                                     fileName: "[project]/components/navbar.tsx",
                                     lineNumber: 30,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$theme$2d$toggle$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThemeToggle"], {}, void 0, false, {
+                                    fileName: "[project]/components/navbar.tsx",
+                                    lineNumber: 36,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -1177,22 +1186,88 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-function Quiz({ questions }) {
+/**
+ * Shuffle array using Fisher-Yates algorithm
+ */ function shuffleArray(array) {
+    const shuffled = [
+        ...array
+    ];
+    for(let i = shuffled.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [
+            shuffled[j],
+            shuffled[i]
+        ];
+    }
+    return shuffled;
+}
+/**
+ * Shuffle options and update correct answer index
+ */ function shuffleQuestionOptions(question) {
+    const { options, correctAnswer } = question;
+    const indexedOptions = options.map((option, index)=>({
+            option,
+            originalIndex: index
+        }));
+    const shuffled = shuffleArray(indexedOptions);
+    const newAnswerIndex = shuffled.findIndex((item)=>item.originalIndex === correctAnswer);
+    return {
+        ...question,
+        options: shuffled.map((item)=>item.option),
+        correctAnswer: newAnswerIndex
+    };
+}
+function Quiz({ questions, randomize = true, maxQuestions = 20 }) {
     _s();
+    const [randomKey, setRandomKey] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0) // Force re-randomization on reset
+    ;
+    // Randomize questions on mount or when randomKey changes
+    const randomizedQuestions = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "Quiz.useMemo[randomizedQuestions]": ()=>{
+            if (!randomize || questions.length === 0) {
+                return questions;
+            }
+            // Shuffle all questions
+            const shuffled = shuffleArray(questions);
+            // Take up to maxQuestions
+            const selected = shuffled.slice(0, Math.min(maxQuestions, shuffled.length));
+            // Shuffle options for each question
+            return selected.map({
+                "Quiz.useMemo[randomizedQuestions]": (q)=>shuffleQuestionOptions(q)
+            }["Quiz.useMemo[randomizedQuestions]"]);
+        }
+    }["Quiz.useMemo[randomizedQuestions]"], [
+        questions,
+        randomize,
+        maxQuestions,
+        randomKey
+    ]);
     const [currentQuestion, setCurrentQuestion] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [selectedAnswer, setSelectedAnswer] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [showResult, setShowResult] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [score, setScore] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const [answered, setAnswered] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    // Reset when questions change
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "Quiz.useEffect": ()=>{
+            setCurrentQuestion(0);
+            setSelectedAnswer(null);
+            setShowResult(false);
+            setScore(0);
+            setAnswered(false);
+        }
+    }["Quiz.useEffect"], [
+        randomizedQuestions
+    ]);
     const handleAnswer = ()=>{
         if (selectedAnswer === null) return;
         setAnswered(true);
-        if (selectedAnswer === questions[currentQuestion].correctAnswer) {
+        if (selectedAnswer === randomizedQuestions[currentQuestion].correctAnswer) {
             setScore(score + 1);
         }
     };
     const handleNext = ()=>{
-        if (currentQuestion < questions.length - 1) {
+        if (currentQuestion < randomizedQuestions.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
             setSelectedAnswer(null);
             setAnswered(false);
@@ -1201,6 +1276,8 @@ function Quiz({ questions }) {
         }
     };
     const resetQuiz = ()=>{
+        // Re-randomize by changing key
+        setRandomKey((prev)=>prev + 1);
         setCurrentQuestion(0);
         setSelectedAnswer(null);
         setShowResult(false);
@@ -1216,26 +1293,26 @@ function Quiz({ questions }) {
                             children: "Үр дүн"
                         }, void 0, false, {
                             fileName: "[project]/components/quiz.tsx",
-                            lineNumber: 59,
+                            lineNumber: 118,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
                             children: [
                                 "Та ",
-                                questions.length,
+                                randomizedQuestions.length,
                                 " асуултаас ",
                                 score,
                                 " асуултанд зөв хариулсан байна"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/quiz.tsx",
-                            lineNumber: 60,
+                            lineNumber: 119,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/quiz.tsx",
-                    lineNumber: 58,
+                    lineNumber: 117,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1247,51 +1324,51 @@ function Quiz({ questions }) {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "text-4xl font-bold text-primary",
                                     children: [
-                                        Math.round(score / questions.length * 100),
+                                        Math.round(score / randomizedQuestions.length * 100),
                                         "%"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/quiz.tsx",
-                                    lineNumber: 66,
+                                    lineNumber: 125,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-muted-foreground mt-2",
-                                    children: score === questions.length ? "Гайхалтай! Та бүх асуултанд зөв хариулсан байна!" : score >= questions.length / 2 ? "Сайн! Гэхдээ дахин оролдож болно." : "Ахин оролдоорой!"
+                                    children: score === randomizedQuestions.length ? "Гайхалтай! Та бүх асуултанд зөв хариулсан байна!" : score >= randomizedQuestions.length / 2 ? "Сайн! Гэхдээ дахин оролдож болно." : "Ахин оролдоорой!"
                                 }, void 0, false, {
                                     fileName: "[project]/components/quiz.tsx",
-                                    lineNumber: 67,
+                                    lineNumber: 128,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/quiz.tsx",
-                            lineNumber: 65,
+                            lineNumber: 124,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                             onClick: resetQuiz,
                             className: "w-full",
-                            children: "Дахин оролдох"
+                            children: "Дахин оролдох (Шинэ асуултууд)"
                         }, void 0, false, {
                             fileName: "[project]/components/quiz.tsx",
-                            lineNumber: 75,
+                            lineNumber: 136,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/quiz.tsx",
-                    lineNumber: 64,
+                    lineNumber: 123,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/quiz.tsx",
-            lineNumber: 57,
+            lineNumber: 116,
             columnNumber: 7
         }, this);
     }
-    const question = questions[currentQuestion];
+    const question = randomizedQuestions[currentQuestion];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardHeader"], {
@@ -1301,24 +1378,24 @@ function Quiz({ questions }) {
                             "Асуулт ",
                             currentQuestion + 1,
                             " / ",
-                            questions.length
+                            randomizedQuestions.length
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/quiz.tsx",
-                        lineNumber: 88,
+                        lineNumber: 149,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardDescription"], {
                         children: question.question
                     }, void 0, false, {
                         fileName: "[project]/components/quiz.tsx",
-                        lineNumber: 91,
+                        lineNumber: 152,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/quiz.tsx",
-                lineNumber: 87,
+                lineNumber: 148,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1336,7 +1413,7 @@ function Quiz({ questions }) {
                                         id: `option-${index}`
                                     }, void 0, false, {
                                         fileName: "[project]/components/quiz.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 173,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -1345,32 +1422,32 @@ function Quiz({ questions }) {
                                         children: option
                                     }, void 0, false, {
                                         fileName: "[project]/components/quiz.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 174,
                                         columnNumber: 15
                                     }, this),
                                     answered && index === question.correctAnswer && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__["CheckCircle2"], {
                                         className: "h-5 w-5 text-green-500"
                                     }, void 0, false, {
                                         fileName: "[project]/components/quiz.tsx",
-                                        lineNumber: 116,
+                                        lineNumber: 177,
                                         columnNumber: 64
                                     }, this),
                                     answered && index === selectedAnswer && index !== question.correctAnswer && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__XCircle$3e$__["XCircle"], {
                                         className: "h-5 w-5 text-red-500"
                                     }, void 0, false, {
                                         fileName: "[project]/components/quiz.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 179,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/components/quiz.tsx",
-                                lineNumber: 100,
+                                lineNumber: 161,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/components/quiz.tsx",
-                        lineNumber: 94,
+                        lineNumber: 155,
                         columnNumber: 9
                     }, this),
                     answered && question.explanation && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1382,7 +1459,7 @@ function Quiz({ questions }) {
                                     children: "Тайлбар:"
                                 }, void 0, false, {
                                     fileName: "[project]/components/quiz.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 188,
                                     columnNumber: 15
                                 }, this),
                                 " ",
@@ -1390,12 +1467,12 @@ function Quiz({ questions }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/quiz.tsx",
-                            lineNumber: 126,
+                            lineNumber: 187,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/quiz.tsx",
-                        lineNumber: 125,
+                        lineNumber: 186,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1407,36 +1484,36 @@ function Quiz({ questions }) {
                             children: "Хариулах"
                         }, void 0, false, {
                             fileName: "[project]/components/quiz.tsx",
-                            lineNumber: 134,
+                            lineNumber: 195,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                             onClick: handleNext,
                             className: "w-full",
-                            children: currentQuestion < questions.length - 1 ? "Дараагийн асуулт" : "Үр дүн харах"
+                            children: currentQuestion < randomizedQuestions.length - 1 ? "Дараагийн асуулт" : "Үр дүн харах"
                         }, void 0, false, {
                             fileName: "[project]/components/quiz.tsx",
-                            lineNumber: 138,
+                            lineNumber: 199,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/quiz.tsx",
-                        lineNumber: 132,
+                        lineNumber: 193,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/quiz.tsx",
-                lineNumber: 93,
+                lineNumber: 154,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/quiz.tsx",
-        lineNumber: 86,
+        lineNumber: 147,
         columnNumber: 5
     }, this);
 }
-_s(Quiz, "cBZUTuLrWPzgfA09ghPBkO7t5FA=");
+_s(Quiz, "IVNQiHfn4aXF7jx5z3a6Uvl25e8=");
 _c = Quiz;
 var _c;
 __turbopack_context__.k.register(_c, "Quiz");

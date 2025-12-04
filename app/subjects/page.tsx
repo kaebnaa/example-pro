@@ -72,6 +72,62 @@ const subjects = [
     icon: "🔧",
     category: "Хувилбар удирдлага",
   },
+  {
+    slug: "reactjs",
+    title: "ReactJS",
+    description: "Frontend хөгжүүлэлтийн framework",
+    icon: "⚛️",
+    category: "Веб хөгжүүлэлт",
+  },
+  {
+    slug: "nextjs",
+    title: "NextJS",
+    description: "React production framework",
+    icon: "▲",
+    category: "Веб хөгжүүлэлт",
+  },
+  {
+    slug: "cybersecurity",
+    title: "Cybersecurity",
+    description: "Кибер аюулгүй байдал ба хамгаалалт",
+    icon: "🔒",
+    category: "Аюулгүй байдал",
+  },
+  {
+    slug: "machine-learning",
+    title: "Machine Learning",
+    description: "Машин сургалт ба AI",
+    icon: "🤖",
+    category: "Хиймэл оюун ухаан",
+  },
+  {
+    slug: "computer-vision",
+    title: "Computer Vision",
+    description: "Компьютерийн хараа ба зураг боловсруулалт",
+    icon: "👁️",
+    category: "Хиймэл оюун ухаан",
+  },
+  {
+    slug: "nlp",
+    title: "Neural Language Model",
+    description: "Байгалийн хэл боловсруулалт",
+    icon: "💬",
+    category: "Хиймэл оюун ухаан",
+  },
+  {
+    slug: "prompt-engineering",
+    title: "Prompt Engineering",
+    description: "AI prompt инженерчлэл",
+    icon: "🎯",
+    category: "Хиймэл оюун ухаан",
+  },
+  {
+    slug: "web-app-structure",
+    title: "Web/App Structure",
+    description: "Вэб болон апликейшний бүтэц, архитектур",
+    icon: "🏗️",
+    category: "Архитектур",
+  },
 ]
 
 function SubjectsContent() {

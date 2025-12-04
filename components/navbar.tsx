@@ -27,6 +27,12 @@ export function Navbar() {
             >
               Хичээлүүд
             </Link>
+            <Link
+              href="/test"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Тест
+            </Link>
             <ThemeToggle />
           </nav>
         </div>

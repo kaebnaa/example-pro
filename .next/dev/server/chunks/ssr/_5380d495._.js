@@ -551,9 +551,18 @@ function Navbar() {
                                     lineNumber: 24,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$theme$2d$toggle$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ThemeToggle"], {}, void 0, false, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/test",
+                                    className: "text-sm font-medium text-muted-foreground hover:text-foreground transition-colors",
+                                    children: "Тест"
+                                }, void 0, false, {
                                     fileName: "[project]/components/navbar.tsx",
                                     lineNumber: 30,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$theme$2d$toggle$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ThemeToggle"], {}, void 0, false, {
+                                    fileName: "[project]/components/navbar.tsx",
+                                    lineNumber: 36,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -1258,6 +1267,55 @@ const subjects = [
         description: "Хувилбар удирдлага ба хамтын ажиллагаа",
         icon: "🔧",
         category: "Хувилбар удирдлага"
+    },
+    {
+        slug: "reactjs",
+        title: "ReactJS",
+        description: "Frontend хөгжүүлэлтийн framework",
+        icon: "⚛️",
+        category: "Веб хөгжүүлэлт"
+    },
+    {
+        slug: "nextjs",
+        title: "NextJS",
+        description: "React production framework",
+        icon: "▲",
+        category: "Веб хөгжүүлэлт"
+    },
+    {
+        slug: "cybersecurity",
+        title: "Cybersecurity",
+        description: "Кибер аюулгүй байдал ба хамгаалалт",
+        icon: "🔒",
+        category: "Аюулгүй байдал"
+    },
+    {
+        slug: "machine-learning",
+        title: "Machine Learning",
+        description: "Машин сургалт ба AI",
+        icon: "🤖",
+        category: "Хиймэл оюун ухаан"
+    },
+    {
+        slug: "computer-vision",
+        title: "Computer Vision",
+        description: "Компьютерийн хараа ба зураг боловсруулалт",
+        icon: "👁️",
+        category: "Хиймэл оюун ухаан"
+    },
+    {
+        slug: "nlp",
+        title: "Neural Language Model",
+        description: "Байгалийн хэл боловсруулалт",
+        icon: "💬",
+        category: "Хиймэл оюун ухаан"
+    },
+    {
+        slug: "prompt-engineering",
+        title: "Prompt Engineering",
+        description: "AI prompt инженерчлэл",
+        icon: "🎯",
+        category: "Хиймэл оюун ухаан"
     }
 ];
 function SubjectsContent() {
@@ -1279,7 +1337,7 @@ function SubjectsContent() {
                                 children: "Хичээлүүд"
                             }, void 0, false, {
                                 fileName: "[project]/app/subjects/page.tsx",
-                                lineNumber: 95,
+                                lineNumber: 144,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1287,13 +1345,13 @@ function SubjectsContent() {
                                 children: "Програмчлалын янз бүрийн сэдвүүдийг судлаарай"
                             }, void 0, false, {
                                 fileName: "[project]/app/subjects/page.tsx",
-                                lineNumber: 96,
+                                lineNumber: 145,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/subjects/page.tsx",
-                        lineNumber: 94,
+                        lineNumber: 143,
                         columnNumber: 11
                     }, this),
                     searchQuery && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1307,7 +1365,7 @@ function SubjectsContent() {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/subjects/page.tsx",
-                        lineNumber: 100,
+                        lineNumber: 149,
                         columnNumber: 13
                     }, this),
                     categories.map((category)=>{
@@ -1321,7 +1379,7 @@ function SubjectsContent() {
                                     children: category
                                 }, void 0, false, {
                                     fileName: "[project]/app/subjects/page.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 160,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1337,7 +1395,7 @@ function SubjectsContent() {
                                                             children: subject.icon
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/subjects/page.tsx",
-                                                            lineNumber: 117,
+                                                            lineNumber: 166,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardTitle"], {
@@ -1345,7 +1403,7 @@ function SubjectsContent() {
                                                             children: subject.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/subjects/page.tsx",
-                                                            lineNumber: 118,
+                                                            lineNumber: 167,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardDescription"], {
@@ -1353,34 +1411,34 @@ function SubjectsContent() {
                                                             children: subject.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/subjects/page.tsx",
-                                                            lineNumber: 119,
+                                                            lineNumber: 168,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/subjects/page.tsx",
-                                                    lineNumber: 116,
+                                                    lineNumber: 165,
                                                     columnNumber: 25
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/subjects/page.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 164,
                                                 columnNumber: 23
                                             }, this)
                                         }, subject.slug, false, {
                                             fileName: "[project]/app/subjects/page.tsx",
-                                            lineNumber: 114,
+                                            lineNumber: 163,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/app/subjects/page.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 161,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, category, true, {
                             fileName: "[project]/app/subjects/page.tsx",
-                            lineNumber: 110,
+                            lineNumber: 159,
                             columnNumber: 15
                         }, this);
                     }),
@@ -1395,28 +1453,28 @@ function SubjectsContent() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/subjects/page.tsx",
-                            lineNumber: 131,
+                            lineNumber: 180,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/subjects/page.tsx",
-                        lineNumber: 130,
+                        lineNumber: 179,
                         columnNumber: 13
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/subjects/page.tsx",
-                lineNumber: 93,
+                lineNumber: 142,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/subjects/page.tsx",
-            lineNumber: 92,
+            lineNumber: 141,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/subjects/page.tsx",
-        lineNumber: 91,
+        lineNumber: 140,
         columnNumber: 5
     }, this);
 }
@@ -1426,7 +1484,7 @@ function SubjectsPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$navbar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Navbar"], {}, void 0, false, {
                 fileName: "[project]/app/subjects/page.tsx",
-                lineNumber: 143,
+                lineNumber: 192,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1434,7 +1492,7 @@ function SubjectsPage() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$sidebar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Sidebar"], {}, void 0, false, {
                         fileName: "[project]/app/subjects/page.tsx",
-                        lineNumber: 145,
+                        lineNumber: 194,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Suspense"], {
@@ -1442,34 +1500,34 @@ function SubjectsPage() {
                             children: "Уншиж байна..."
                         }, void 0, false, {
                             fileName: "[project]/app/subjects/page.tsx",
-                            lineNumber: 146,
+                            lineNumber: 195,
                             columnNumber: 29
                         }, void 0),
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(SubjectsContent, {}, void 0, false, {
                             fileName: "[project]/app/subjects/page.tsx",
-                            lineNumber: 147,
+                            lineNumber: 196,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/subjects/page.tsx",
-                        lineNumber: 146,
+                        lineNumber: 195,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/subjects/page.tsx",
-                lineNumber: 144,
+                lineNumber: 193,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/app/subjects/page.tsx",
-                lineNumber: 150,
+                lineNumber: 199,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/subjects/page.tsx",
-        lineNumber: 142,
+        lineNumber: 191,
         columnNumber: 5
     }, this);
 }
