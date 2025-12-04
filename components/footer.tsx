@@ -4,8 +4,8 @@ import { BookOpen, Github, Mail } from "lucide-react"
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      <div className="container py-8 md:py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+      <div className="w-full px-4 md:px-8 py-8 md:py-12">
+        <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-3">
             <div className="flex items-center space-x-2">
               <BookOpen className="h-6 w-6 text-primary" />
@@ -78,7 +78,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
+        <div className="mx-auto mt-8 max-w-6xl border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Amjilt Cyber School. Бүх эрх хуулиар хамгаалагдсан.</p>
         </div>
       </div>
