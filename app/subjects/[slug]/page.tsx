@@ -4860,17 +4860,17 @@ export default async function SubjectPage({ params }: PageProps) {
                 }
                 
                 return allQuizQuestions.length > 0 ? (
-                  <div className="space-y-4">
-                    <Alert>
-                      <Lightbulb className="h-4 w-4" />
-                      <AlertTitle>Багахан тест</AlertTitle>
-                      <AlertDescription>
+                <div className="space-y-4">
+                  <Alert>
+                    <Lightbulb className="h-4 w-4" />
+                    <AlertTitle>Багахан тест</AlertTitle>
+                    <AlertDescription>
                         Суралцсан зүйлээ шалгаж үзэхийн тулд доорх асуултуудад хариулна уу. 
                         Асуултууд random-р солигдож байрлал өөрчлөгдөнө.
-                      </AlertDescription>
-                    </Alert>
+                    </AlertDescription>
+                  </Alert>
                     <Quiz questions={allQuizQuestions} randomize={true} maxQuestions={20} />
-                  </div>
+                </div>
                 ) : null
               })()}
             </div>
